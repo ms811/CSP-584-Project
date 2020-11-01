@@ -16,7 +16,7 @@
     
     /* Remove the jumbotron's default bottom margin */ 
      .jumbotron {
-        background: url('images/header.jpg') no-repeat center center fixed;
+        background: url('../images/header.jpg') no-repeat center center fixed;
         -moz-background-size: cover;
         -webkit-background-size: cover;
         -o-background-size: cover;
