@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Food</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <%@ include file="header.jsp"%>
-        <%@ include file="navbar.jsp"%>
+
+        <%@ include file="../parts/header.jsp"%>
+        <%@ include file="../parts/navbar.jsp"%>
+        <%@ include file="../parts/searchbar.jsp" %>
 
         <div class="container">    
             <div class="row">
@@ -59,7 +54,4 @@
               </div>
             </div>
 
-
-        <%@ include file="footer.jsp"%>
-    </body>
-</html>
+<%@ include file="../parts/footer.jsp"%>

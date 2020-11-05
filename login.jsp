@@ -10,38 +10,36 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-        background: url('images/header.jpg') no-repeat center center fixed;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        margin-bottom: 0;
-        background-color: #1ee671;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
 
-    body { 
-    background: url('images/background.jpg') no-repeat center center fixed;
-    margin: 0;
-    padding: 0;
-    background-color: #17a2b8;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    }
+      .navbar {
+        margin-bottom: 50px;
+        border-radius: 0;
+      }
+      
+      /* Remove the jumbotron's default bottom margin */ 
+       .jumbotron {
+          background: url('images/header.jpg') no-repeat center center fixed;
+          -moz-background-size: cover;
+          -webkit-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          margin-bottom: 0;
+          background-color: #1ee671;
+      }
+     
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
+  
+      body { 
+      background: url('images/background.jpg') no-repeat center center fixed;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      }
     .panel-login {
 	border-color: #ccc;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
@@ -181,7 +179,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="./index.jsp">Home</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="#">Deals</a></li>
           <li><a href="#">Stores</a></li>

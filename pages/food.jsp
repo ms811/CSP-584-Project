@@ -8,8 +8,9 @@
         <link rel="stylesheet" href="./style.css" type="text/css">
     </head>
     <body>
-        <%@ include file="header.jsp"%>
-        <%@ include file="navbar.jsp"%>
+        <%@ include file="../parts/header.jsp"%>
+        <%@ include file="../parts/navbar.jsp"%>
+        <% for(int i = 0; i < 3; i+=1) { %>
 
         <div class="container">    
             <div class="row">
@@ -36,7 +37,8 @@
               </div>
             </div>
           </div><br>
-          
+
+          <% } %>
           <div class="container">    
             <div class="row">
               <div class="col-sm-4">
@@ -62,6 +64,6 @@
               </div>
             </div>
 
-            <%@ include file="footer.jsp"%>
+            <%@ include file="../parts/footer.jsp"%>
     </body>
 </html>

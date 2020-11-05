@@ -11,7 +11,7 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href=".././index.jsp">Home</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">Deals</a></li>
         <li><a href="#">Stores</a></li>
@@ -19,8 +19,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li><a href="./login.jsp"><span class="glyphicon glyphicon-off"></span> Login</a></li>
+        <li><a href="../pages/accountpage.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="../login.jsp"><span class="glyphicon glyphicon-off"></span> Login</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
