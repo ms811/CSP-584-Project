@@ -8,7 +8,7 @@
               <div class="col-sm-4">
                 <div class="panel panel-primary">
                   <div class="panel-heading">Bcb</div>
-                  <div class="panel-body"><img src="../images/bcb/moisturizer.jpg" class="img-responsive" style="width:100%" alt="Moisturizer Image"></div>
+                  <div class="panel-body"><a href="${pageContext.request.contextPath}/parts/product.jsp"><img src="../images/bcb/moisturizer.jpg" class="img-responsive" style="width:100%" alt="Moisturizer Image"></a></div>
                   <div class="panel-footer">Moisturizer</div>
                 </div>
               </div>

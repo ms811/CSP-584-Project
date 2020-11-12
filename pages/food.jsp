@@ -10,14 +10,14 @@
     <body>
         <%@ include file="../parts/header.jsp"%>
         <%@ include file="../parts/navbar.jsp"%>
-        <% for(int i = 0; i < 3; i+=1) { %>
+        <!-- <% for(int i = 0; i < 3; i+=1) { %> -->
 
         <div class="container">    
             <div class="row">
               <div class="col-sm-4">
                 <div class="panel panel-primary">
                   <div class="panel-heading">Food</div>
-                  <div class="panel-body"><img src="../images/food/sourdough.jpg" class="img-responsive" style="width:100%" alt="Sourdough bread Image"></div>
+                  <div class="panel-body"><a href="${pageContext.request.contextPath}/parts/product.jsp"><img src="../images/food/sourdough.jpg" class="img-responsive" style="width:100%" alt="Sourdough bread Image"></a></div>
                   <div class="panel-footer">Sourdough Bread </div>
                 </div>
               </div>
@@ -38,7 +38,7 @@
             </div>
           </div><br>
 
-          <% } %>
+          <!-- <% } %> -->
           <div class="container">    
             <div class="row">
               <div class="col-sm-4">

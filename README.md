@@ -5,7 +5,7 @@ pages directory : add new pages into pages folder
 images directory : add images into image directory creating specific folder according to category
                    for example: if image is of food category put image into images/food directory
 
-parts diorectory : parts directory is for head footer navbar and searchbar 
+parts directory : parts directory is for head footer navbar and searchbar 
 
 sqlconnections directory : all SQL database connections goes into sqlconnections directory
 

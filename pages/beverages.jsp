@@ -6,8 +6,8 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <%@ include file="header.jsp"%>
-        <%@ include file="navbar.jsp"%>
+        <%@ include file="../parts/header.jsp"%>
+        <%@ include file="../parts/navbar.jsp"%>
 
         <div class="container">    
             <div class="row">
@@ -61,6 +61,6 @@
             </div>
 
 
-        <%@ include file="footer.jsp"%>
+        <%@ include file="../parts/footer.jsp"%>
     </body>
 </html>

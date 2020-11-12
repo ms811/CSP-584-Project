@@ -84,9 +84,24 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Deals</a></li>
+        <li class="active"><a href="index.jsp">Home</a></li>
+        <li>  
+          <!-- <a href="#">Products</a> -->
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Products
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="pages/food.jsp">Food</a>
+              <a class="dropdown-item" href="pages/beverages.jsp">Beverages</a>
+              <a class="dropdown-item" href="pages/household.jsp">Household</a>
+              <a class="dropdown-item" href="pages/pchb.jsp">Pchb</a>
+              <a class="dropdown-item" href="pages/bcb.jsp">Bcb</a>
+              <a class="dropdown-item" href="pages/deals.jsp">Deals</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="pages/deals.jsp">Deals</a></li>
         <li><a href="#">Stores</a></li>
         <li><a href="#">Contact</a></li>
       </ul>

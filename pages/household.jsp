@@ -6,8 +6,8 @@
         <link href="./style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <%@ include file="header.jsp"%>
-        <%@ include file="navbar.jsp"%>
+        <%@ include file="../parts/header.jsp"%>
+        <%@ include file="../parts/navbar.jsp"%>
 
         <div class="container">    
             <div class="row">
@@ -61,6 +61,6 @@
             </div>
 
 
-        <%@ include file="footer.jsp"%>
+        <%@ include file="../parts/footer.jsp"%>
     </body>
 </html>
