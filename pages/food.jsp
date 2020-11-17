@@ -1,5 +1,22 @@
 <!DOCTYPE html>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <html lang="en">
+    <%
+                        String id = request.getParameter("userid");
+                        String driver = "com.mysql.jdbc.Driver";
+                        String connectionUrl = "jdbc:mysql://localhost:3306/";
+                        String database = "project";
+                        String userid = "root";
+                        String password = "root";
+                        try {
+                        Class.forName(driver);
+                        } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                        }
+                       %>
     <head>
         <title>Food</title>
         <meta charset="utf-8">
@@ -10,15 +27,58 @@
     <body>
         <%@ include file="../parts/header.jsp"%>
         <%@ include file="../parts/navbar.jsp"%>
-        <!-- <% for(int i = 0; i < 3; i+=1) { %> -->
+        <% for(int i = 0; i < 3; i+=1) { %>
 
         <div class="container">    
             <div class="row">
               <div class="col-sm-4">
                 <div class="panel panel-primary">
                   <div class="panel-heading">Food</div>
-                  <div class="panel-body"><a href="${pageContext.request.contextPath}/parts/product.jsp"><img src="../images/food/sourdough.jpg" class="img-responsive" style="width:100%" alt="Sourdough bread Image"></a></div>
+                  <div class="panel-body"><img src="../images/food/sourdough.jpg" class="img-responsive" style="width:100%" alt="Sourdough bread Image"></div>
                   <div class="panel-footer">Sourdough Bread </div>
+                    <div>
+                   
+                       <%
+                            try{
+                           
+                            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root", "root");
+                            Statement statement=connection.createStatement();
+                            String sql ="select * from grocery where category = 'food'";
+                            ResultSet resultSet = statement.executeQuery(sql);
+                            while(resultSet.next()){
+                            String Naming = resultSet.getString("name") ;
+                           String cat = resultSet.getString("category") ;
+                           session.setAttribute("Name",Naming);
+                           session.setAttribute("Category",cat);
+                          out.println(session.getAttribute("Name"));
+                            %>
+                                                  
+<!--
+                           String Naming = resultSet.getString("name") ;
+                           String cat = resultSet.getString("category") ;
+                           sess.setAttribute("Name",Naming);
+                           sess.setAttribute("Category",cat);
+-->
+                           
+                           <div class="panel-footer"><%=resultSet.getString("name") %></div>
+                           
+                           <div class="panel-footer"><%=resultSet.getString("category") %></div>
+                               
+                            <p style="text-decoration: line-through;" class="panel-footer"><%=resultSet.getString("name") %><p>
+                           
+                           <%
+                            }
+                            connection.close();
+                            } catch (Exception e) {
+                            e.printStackTrace();
+                            }
+                            %>
+                        
+                           </%div>
+                                <form action="cart.jsp">
+                                <input type="submit" value="checkout">
+                                </form>
+                  <button type="button"> <a href="review.jsp">Creazione Nuovo Corso</a></button>
                 </div>
               </div>
               <div class="col-sm-4"> 
@@ -26,6 +86,7 @@
                   <div class="panel-heading">Food</div>
                   <div class="panel-body"><img src="../images/food/cereal.jpg" class="img-responsive" style="width:100%" alt="Cereal box Image"></div>
                   <div class="panel-footer">Breakfast</div>
+                  <button type="button"> <a href="../Restaurantslist">Creazione</a></button>
                 </div>
               </div>
               <div class="col-sm-4"> 
@@ -38,7 +99,7 @@
             </div>
           </div><br>
 
-          <!-- <% } %> -->
+          <% } %>
           <div class="container">    
             <div class="row">
               <div class="col-sm-4">

@@ -1,0 +1,14 @@
+CREATE TABLE `grocery_food` (
+  `product_id` int DEFAULT NULL,
+  `product_name` varchar(200) DEFAULT NULL,
+  `product_description` varchar(200) DEFAULT NULL,
+  `product_currentprice` varchar(200) DEFAULT NULL,
+  `product_discount` int DEFAULT NULL,
+  `product_actualprice` int DEFAULT NULL,
+  `product_category` varchar(200) DEFAULT NULL,
+  `product_image` varchar(200) DEFAULT NULL,
+  `product_manufacturer` varchar(200) DEFAULT NULL,
+  `inventory` int DEFAULT NULL,
+  `store_zipcode` varchar(200) DEFAULT NULL,
+  `rating` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

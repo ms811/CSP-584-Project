@@ -58,7 +58,7 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
   
     </style>
   </head>
-  <body>
+  <body onload="init()">
   
   <div class="jumbotron">
     <div class="container text-center">
@@ -70,79 +70,9 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
     </div>
   </div>
 
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.jsp">Home</a></li>
-        <li>  
-          <!-- <a href="#">Products</a> -->
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Products
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="pages/food.jsp">Food</a>
-              <a class="dropdown-item" href="pages/beverages.jsp">Beverages</a>
-              <a class="dropdown-item" href="pages/household.jsp">Household</a>
-              <a class="dropdown-item" href="pages/pchb.jsp">Pchb</a>
-              <a class="dropdown-item" href="pages/bcb.jsp">Bcb</a>
-              <a class="dropdown-item" href="pages/deals.jsp">Deals</a>
-            </div>
-          </div>
-        </li>
-        <li><a href="pages/deals.jsp">Deals</a></li>
-        <li><a href="#">Stores</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="pages/accountpage.jsp"><span class="glyphicon glyphicon-user">
-          <%
-          String fileName = "test.txt";
-          InputStream ins = application.getResourceAsStream(fileName);
-          try
-          {
-          if(ins == null)
-          {
-          response.setStatus(response.SC_NOT_FOUND);
-          }
-          else
-          {
-          BufferedReader br = new BufferedReader((new InputStreamReader(ins)));
-          String data;
-          while((data= br.readLine())!= null)
-          {
-          out.println(data+"<br>");
-          }
-          } 
-          }
-          catch(IOException e)
-          {
-          out.println(e.getMessage());
-          }
-          %>
-        <li><a href="pages/accountpage.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li><a href="./login.jsp"><span class="glyphicon glyphicon-off"></span> Login</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+<%@ include file="parts/navbar.jsp" %>
 <%@ include file="parts/searchbar.jsp" %>
-
 <br>
-
 <%@ include file="pages/content.jsp" %> 
 </body>
 <%@ include file="parts/footer.jsp" %> 

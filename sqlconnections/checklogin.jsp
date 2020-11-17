@@ -1,28 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,java.util.*"%>
-<%
-String userid=request.getParameter("username");
-session.putValue("userid",userid);
-String password=request.getParameter("password");
+<!-- 
 
-Class.forName("com.mysql.jdbc.Driver");
-java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","root");
+<%@ page import ="java.sql.*" %>
+<%@ page import ="java.io.*" %>
+<%@ page import ="java.io.IOException" %>
+<%@ page import ="java.util.ArrayList" %>
 
-Statement st= con.createStatement();
-ResultSet rs=st.executeQuery("select * from login where user='"+userid+"' and pass='"+password+"'");
+    <%
 
-try{
-rs.next();
-if(rs.getString("pass").equals(password)&&rs.getString("user").equals(userid))
-{
-response.sendRedirect("../index.jsp");
-}
-else{
-out.println("Invalid password or username.");
-}
-}
-catch (Exception e) {
-e.printStackTrace();
-}
-%>
+    String userid = request.getParameter("username");    
+    String pwd = request.getParameter("password");
+
+    Class.forName("com.mysql.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","root");
+    Statement st = con.createStatement();
+    ResultSet rs;
+    rs = st.executeQuery("select * from login where user='"+userid+"' and pass='"+pwd+"'");
+    ArrayList<String> loggeinuser = new ArrayList<String>();
+
+
+
+    if (rs.next()) {
+        loggeinuser.add(rs.getString("user"));
+        loggeinuser.add(rs.getString("pass"));
+        loggeinuser.add(rs.getString("usertype"));
+        System.out.println(loggeinuser);
+
+        String nameOfTextFile = "C:\\apache-tomcat-7.0.34\\webapps\\project\\test.txt";
+        try {   
+            PrintWriter pw = new PrintWriter(new FileOutputStream(nameOfTextFile));
+            pw.flush();
+            pw.println(""+rs.getString("user"));
+            //clean up
+            pw.close();
+        } catch(IOException e) {
+        out.println(e.getMessage());
+        }
+
+        session.setAttribute("userid", userid);
+        response.sendRedirect("../index.jsp");
+    } else {
+        request.setAttribute("errorMessage", "Invalid user or password");
+        request.getRequestDispatcher("../login.jsp").forward(request, response);
+             }
+
+    %> -->

@@ -36,13 +36,18 @@
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(0, 109, 0, 0.8);
 }
 </style>
+<script src="javascript.js"></script>
 <div class="container">
 <div class="col-md-6 col-md-offset-3">     
 <div class="row">
 <form role="form" id="form-buscar">
 <div class="form-group">
 <div class="input-group">
-<input id="1" class="form-control" type="text" name="search" placeholder="Search..." required/>
+<input type="text" name="searchId" value = "" class="form-control" id="searchId" onkeyup="doCompletion()" placeholder="Search..." required/>
+<div id="auto-row">
+  <table id="complete-table" class="gridtable"
+    style="position: absolute; width: 315px;"></table>
+</div>
 <span class="input-group-btn">
 <button class="btn btn-success" type="submit">
 <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search

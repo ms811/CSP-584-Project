@@ -4,7 +4,7 @@
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">Food</div>
-        <div class="panel-body"><a href="${pageContext.request.contextPath}/pages/food.jsp"><img src="./images/food.jpg" class="img-responsive" style="width:100%" alt="Food Image"></div>
+        <div class="panel-body"><a href="${pageContext.request.contextPath}/Foodslist"><img src="./images/food.jpg" class="img-responsive" style="width:100%" alt="Food Image"></div>
         <div class="panel-footer">Veg-Non Veg</div>
       </div>
     </div>
