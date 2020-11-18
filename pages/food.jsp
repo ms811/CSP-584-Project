@@ -41,7 +41,7 @@
                        <%
                             try{
                            
-                            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root", "root");
+                            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root", "f8lw2A9sp");
                             Statement statement=connection.createStatement();
                             String sql ="select * from grocery where category = 'food'";
                             ResultSet resultSet = statement.executeQuery(sql);

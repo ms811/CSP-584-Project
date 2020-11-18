@@ -15,7 +15,7 @@ public class MySqlDataStoreUtilities {
 
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useUnicode=true&characterEncoding=utf8", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useUnicode=true&characterEncoding=utf8", "root", "f8lw2A9sp");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
