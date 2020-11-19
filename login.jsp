@@ -164,7 +164,7 @@
 <body>
 
 
-<%@ include file="parts/header.jsp" %>
+<%@ include file="header.jsp" %>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -310,6 +310,6 @@
     <button type="button" class="btn btn-danger">Sign Up</button>
   </form>
 </footer> -->
-<%@ include file="parts/footer.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

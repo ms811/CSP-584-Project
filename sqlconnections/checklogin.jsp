@@ -17,30 +17,4 @@
     rs = st.executeQuery("select * from login where user='"+userid+"' and pass='"+pwd+"'");
     ArrayList<String> loggeinuser = new ArrayList<String>();
 
-
-
-    if (rs.next()) {
-        loggeinuser.add(rs.getString("user"));
-        loggeinuser.add(rs.getString("pass"));
-        loggeinuser.add(rs.getString("usertype"));
-        System.out.println(loggeinuser);
-
-        String nameOfTextFile = "C:\\apache-tomcat-7.0.34\\webapps\\project\\test.txt";
-        try {   
-            PrintWriter pw = new PrintWriter(new FileOutputStream(nameOfTextFile));
-            pw.flush();
-            pw.println(""+rs.getString("user"));
-            //clean up
-            pw.close();
-        } catch(IOException e) {
-        out.println(e.getMessage());
-        }
-
-        session.setAttribute("userid", userid);
-        response.sendRedirect("../index.jsp");
-    } else {
-        request.setAttribute("errorMessage", "Invalid user or password");
-        request.getRequestDispatcher("../login.jsp").forward(request, response);
-             }
-
     %> -->

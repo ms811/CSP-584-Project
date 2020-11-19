@@ -10,14 +10,12 @@
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
-      margin-bottom: 50px;
       border-radius: 0;
     }
     
     /* Remove the jumbotron's default bottom margin */ 
      .jumbotron {
-        background: url('../images/header.jpg') no-repeat center center fixed;
-
+        background: url('images/header.jpg') no-repeat center center fixed;
         -moz-background-size: cover;
         -webkit-background-size: cover;
         -o-background-size: cover;
@@ -33,8 +31,7 @@
     }
 
     body { 
-    background: url('../images/background.jpg') no-repeat center center fixed;
-
+    background: url('images/background.jpg') no-repeat center center fixed;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -47,9 +44,6 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <!-- <a href="#">
-        <img class="logo" src="images/logo.png" alt="CSGO Howl" style="float:left";>
-    </a> 	 -->
     <h1>Grocery Hub</h1>      
     <p>WE CARE FOR YOU</p>
   </div>

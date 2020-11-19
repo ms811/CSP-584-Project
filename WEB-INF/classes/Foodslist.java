@@ -15,12 +15,14 @@ import java.util.ArrayList;
 public class Foodslist extends HttpServlet {
 
 	/* Console Page Displays all the Consoles and their Information in Game Speed */
-    ArrayList<Foods> foodslist = new ArrayList<Foods>();
+	ArrayList<Foods> foodslist = new ArrayList<Foods>();
+	String reviewslist;
     public void init() throws ServletException
     {
 		
 		try{
 			foodslist = MySqlDataStoreUtilities.getFoods();
+			HashMap<String, ArrayList<Review>> hm = MongoDBDataStoreUtilities.selectReview();
             System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+foodslist);
 		}
 		catch(Exception e)

@@ -13,10 +13,10 @@
               <div class="col-sm-14">
                 <div class="panel panel-primary">
                   
-                  <c:forEach items="${Foodslist}" var="foodslist">
+                  <c:forEach items="${Productlist}" var="foodslist">
                     
                     <div class="col-md-3">
-                      <form id="myform" action=product.jsp method="POST">
+                      <form id="myform" action=./product.jsp method="POST">
                         <div>
                                 <input type="hidden" name = "product_id" value="${foodslist.product_id}">
                                 <input type="hidden" name = "product_name" value="${foodslist.product_name}">
@@ -67,5 +67,3 @@
         
 
             <%@ include file="footer.jsp"%>
- 
-            

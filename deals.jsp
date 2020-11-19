@@ -5,8 +5,8 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <%@ include file="../parts/header.jsp"%>
-        <%@ include file="../parts/navbar.jsp"%>
+        <%@ include file="header.jsp"%>
+        <%@ include file="navbar.jsp"%>
 
         <div class="container">    
             <div class="row">
@@ -34,6 +34,6 @@
             </div>
           </div><br>
 
-        <%@ include file="../parts/footer.jsp"%>
+        <%@ include file="footer.jsp"%>
     </body>
 </html>

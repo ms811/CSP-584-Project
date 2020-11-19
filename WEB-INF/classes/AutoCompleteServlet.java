@@ -93,9 +93,10 @@ public class AutoCompleteServlet extends HttpServlet {
 				HashMap<String,Product> data=AjaxUtility.getData();     	
 				if ((searchId != null) && data.containsKey(searchId.trim())) 
 				{
-					request.setAttribute("data",data.get(searchId.trim()));	
-					RequestDispatcher rd=context.getRequestDispatcher("/ProductData");
-					rd.forward(request,response);
+					request.setAttribute("Productlist",data.get(searchId.trim()));
+					request.getRequestDispatcher("pages//productdata.jsp").forward(request,response);	
+					// RequestDispatcher rd=context.getRequestDispatcher("pages//allproducts.jsp");
+					// rd.forward(request,response);
 				}
 			}
 		}

@@ -33,6 +33,6 @@ public class Restaurantslist extends HttpServlet {
 			// System.out.println("After catch"+restaurantslist);
 
         request.setAttribute("Restaurantslist",restaurantslist);
-        request.getRequestDispatcher("corousel.jsp").forward(request,response);
+        request.getRequestDispatcher("pages//food.jsp").forward(request,response);
     }
 }
