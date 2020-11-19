@@ -1,0 +1,31 @@
+product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode
+1,Runa,Organic Clean Energy Drink,73.35,0,73.52,beverages,http://dummyimage.com/159x107.bmp/5fa2dd/ffffff,"Bernier, D'Amore and Gutmann",50,54897
+2,Ice Mountain,Wine,109.07,6,137.97,beverages,http://dummyimage.com/108x171.jpg/dddddd/000000,"Parker, Johnson and Lehner",18,74698
+3,Gatorade,Sports Drink,20.69,2,26.81,beverages,http://dummyimage.com/176x163.bmp/cc0000/ffffff,"Wisozk, Hayes and Barton",17,89665
+4,V8,Energy Drink,134.28,7,170.12,beverages,http://dummyimage.com/212x151.bmp/ff4444/ffffff,Bartoletti LLC,79,74523
+5,Chardonnay,White Wine,37.38,3,54.23,beverages,http://dummyimage.com/130x230.png/cc0000/ffffff,Pagac-Ryan,74,68300
+6,Beer,Camerons Cream Ale,198.79,3,224,beverages,http://dummyimage.com/110x188.jpg/5fa2dd/ffffff,Boehm Inc,92,85412
+7,Izze,Sparkling Juice,197.25,7,249,beverages,http://dummyimage.com/239x150.jpg/ff4444/ffffff,Donnelly and Sons,13,25416
+8,Bai Bubbles,Sparkling Pineapple Water,121.24,7,158,beverages,http://dummyimage.com/190x172.jpg/ff4444/ffffff,Mante Group,05,35243
+9,Bubbly,Sparkling Water,90.49,1,95,beverages,http://dummyimage.com/230x163.bmp/cc0000/ffffff,"Hudson, Wisozk and King",88,03016
+10,Cahors Ac 2000,Wine,67.77,0,67.77,beverages,http://dummyimage.com/106x137.jpg/dddddd/000000,Wyman Group,43,04990 CEDEX 9
+11,Reign,Total Body Fuel,71.80,3,136.27,beverages,http://dummyimage.com/157x194.png/ff4444/ffffff,Franecki Group,22,70593
+12,Bodyarmor,Sports Drink,21.99,1,96.52,beverages,http://dummyimage.com/147x125.jpg/ff4444/ffffff,VonRueden-Haag,12,74698
+13,Core Power,Elite High Protein Shakes,55,3,59.77,beverages,http://dummyimage.com/172x165.jpg/dddddd/000000,"Champlin, Hayes and Corkery",85,4446
+14,Monster,Energy Drink,101,3,128.41,beverages,http://dummyimage.com/109x153.bmp/ff4444/ffffff,"Stiedemann, Ratke and McKenzie",73,27095
+15,Rockstar,Energy Drink,118.08,5,132.97,beverages,http://dummyimage.com/232x102.png/5fa2dd/ffffff,Grant-Batz,09,45896
+16,Redbull,Energy Drink,61.25,1,68.04,beverages,http://dummyimage.com/122x120.jpg/5fa2dd/ffffff,Maggio-Gutkowski,45,12377
+17,Milk,Whole Cow Milk,199.73,5,265.52,beverages,http://dummyimage.com/190x128.bmp/dddddd/000000,"Carter, Gibson and Pfannerstill",82,35214
+18,Vitacoco,Pressed Coconut Water,88.51,7,153.48,beverages,http://dummyimage.com/189x153.bmp/dddddd/000000,"McKenzie, Kling and Nolan",41,85423
+19,Cherry,Carbonated Water,174.66,5,199.43,beverages,http://dummyimage.com/116x115.png/cc0000/ffffff,"Fisher, Wunsch and Beer",59,39804
+20,Perrier,Carbonated Mineral Water,91.55,1,109.94,beverages,http://dummyimage.com/202x115.jpg/ff4444/ffffff,"Bednar, Krajcik and Becker",18,36528
+21,Celsius,Sparkling Orange Fitness Drink,66.35,1,74.66,beverages,http://dummyimage.com/119x246.bmp/dddddd/000000,"Funk, Wehner and Gutmann",99,65489
+22,Bang,Energy Drink,21.14,8,45.35,beverages,http://dummyimage.com/243x184.jpg/cc0000/ffffff,"Christiansen, Ryan and Vandervort",99,59878
+23,Alo,Aloe Vera Juice Drink,30.34,3,48.17,beverages,http://dummyimage.com/123x163.bmp/5fa2dd/ffffff,Sanford-O'Kon,61,39630
+24,Fairlife,Protein Milkshake,8.14,4,75.24,beverages,http://dummyimage.com/159x137.jpg/5fa2dd/ffffff,Blanda-Blick,48,25489
+25,Pureleaf,Sweet Tea,152.89,7,132.10,beverages,http://dummyimage.com/115x248.png/dddddd/000000,Roob LLC,06,54879
+26,Starbucks,Doubleshot Energy Coffee,25.92,1,30.97,beverages,http://dummyimage.com/237x145.jpg/cc0000/ffffff,Welch-Sporer,40,56987
+27,Touraine Azay Le Rideau,Wine,152.10,7,198.30,beverages,http://dummyimage.com/157x129.png/ff4444/ffffff,Hills-Sauer,77,65874
+28,Bolt24,Energy Drink,46.31,0,187.10,beverages,http://dummyimage.com/144x201.png/cc0000/ffffff,Mante-Spinka,23,56412
+29,Spellagrino,Cream Soda,187.82,5,248.17,beverages,http://dummyimage.com/156x113.jpg/dddddd/000000,"Pagac, Walsh and Friesen",77,84207
+30,Nestea,Iced Tea,96.35,4,112.46,beverages,http://dummyimage.com/100x154.jpg/5fa2dd/ffffff,"Nikolaus, Daniel and Glover",53,65987

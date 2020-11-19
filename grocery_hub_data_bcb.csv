@@ -1,0 +1,31 @@
+product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode
+1,Acure,Cleansing Gel,33.35,0,33.52,bcb,http://dummyimage.com/159x107.bmp/5fa2dd/ffffff,"Parker, Johnson and Lehner",50,54897
+2,Bonef,Liquid Soap,11.07,6,19.97,bcb,http://dummyimage.com/108x171.jpg/dddddd/000000," Hayes",18,74698
+3,Pacifica,Perfume,11.69,2,16.81,bcb,http://dummyimage.com/176x163.bmp/cc0000/ffffff,"Wisozk, Hayes and Barton",17,89665
+4,Nemat,Perfume,54.28,7,90.12,bcb,http://dummyimage.com/212x151.bmp/ff4444/ffffff,Bartoletti LLC,79,74523
+5,Acure,Eye Cream,17.38,3,24.23,bcb,http://dummyimage.com/130x230.png/cc0000/ffffff,Pagac-Ryan,74,68300
+6,Heritage,Rose Water Spray,8.79,3,14.74,bcb,http://dummyimage.com/110x188.jpg/5fa2dd/ffffff,Boehm Inc,92,85412
+7,Alba,Aloe Vera Gel,19.25,7,24.9,bcb,http://dummyimage.com/239x150.jpg/ff4444/ffffff,Donnelly and Sons,13,25416
+8,Badger,Sun Screen,13.24,7,25.9,bcb,http://dummyimage.com/190x172.jpg/ff4444/ffffff,Mante Group,05,35243
+9,Hemp,Lip Balm,8.49,1,9.4,bcb,http://dummyimage.com/230x163.bmp/cc0000/ffffff,"Hudson, Wisozk and King",88,03016
+10,Gillette,Proglide Razer,12.77,0,12.77,bcb,http://dummyimage.com/106x137.jpg/dddddd/000000,Wyman Group,43,04990 CEDEX 9
+11,Tweezerman,Tweezers,6.80,3,12.27,bcb,http://dummyimage.com/157x194.png/ff4444/ffffff,Franecki Group,22,70593
+12,Andalou,Shaving Cream,7.99,1,8.82,bcb,http://dummyimage.com/147x125.jpg/ff4444/ffffff,VonRueden-Haag,12,74698
+13,Evolve,Detangle Brush,7.22,3,10.51,bcb,http://dummyimage.com/172x165.jpg/dddddd/000000,"Champlin, Hayes and Corkery",85,4446
+14,Chatto,Hair Loss Repair Creme,33.57,3,48.41,bcb,http://dummyimage.com/109x153.bmp/ff4444/ffffff,"Stiedemann, Ratke and McKenzie",73,27095
+15,Chatto,Shampoo,20.08,5,42.97,bcb,http://dummyimage.com/232x102.png/5fa2dd/ffffff,Grant-Batz,09,45896
+16,Giovanni,Tea Tree Shampoo,4.9,1,5.04,bcb,http://dummyimage.com/122x120.jpg/5fa2dd/ffffff,Maggio-Gutkowski,45,12377
+17,Alaffia,Bar Soap,8.73,0,8.73,bcb,http://dummyimage.com/190x128.bmp/dddddd/000000,"Carter, Gibson and Pfannerstill",82,35214
+18,Accure,Hydrating Gel,12.51,7,43.48,bcb,http://dummyimage.com/189x153.bmp/dddddd/000000,"McKenzie, Kling and Nolan",41,85423
+19,Mineral,Eyeliner,6.49,5,15.24,bcb,http://dummyimage.com/116x115.png/cc0000/ffffff,"Fisher, Wunsch and Beer",59,39804
+20,Burt's Bee,Moisturizing Lip Care,4.55,0,4.55,bcb,http://dummyimage.com/202x115.jpg/ff4444/ffffff,"Bednar, Krajcik and Becker",18,36528
+21,Hurts Dee,Lip Balm,4.35,1,5.06,bcb,http://dummyimage.com/119x246.bmp/dddddd/000000,"Funk, Wehner and Gutmann",99,65489
+22,Alba Botanica,Baby Shampoo,31.14,8,55.35,bcb,http://dummyimage.com/243x184.jpg/cc0000/ffffff,"Christiansen, Ryan and Vandervort",99,59878
+23,Verta,Sunscreen,5.34,1,6.17,bcb,http://dummyimage.com/123x163.bmp/5fa2dd/ffffff,Sanford-O'Kon,61,39630
+24,Pacifica,Hoilday Gift Set,8.14,4,75.24,bcb,http://dummyimage.com/159x137.jpg/5fa2dd/ffffff,Blanda-Blick,48,25489
+25,Evenhealy,Oil and Water Skin Care Set,42.89,1,47.10,bcb,http://dummyimage.com/115x248.png/dddddd/000000,Roob LLC,06,54879
+26,MyChelle,Sun Shield Clear Spray,12.92,1,14.57,bcb,http://dummyimage.com/237x145.jpg/cc0000/ffffff,Welch-Sporer,40,56987
+27,Andalou,Natural Face Lotion,13.10,7,17.80,bcb,http://dummyimage.com/157x129.png/ff4444/ffffff,Hills-Sauer,77,65874
+28,Derma-E,Antiwrinkle Cream,16.10,0,16.10,bcb,http://dummyimage.com/144x201.png/cc0000/ffffff,Mante-Spinka,23,56412
+29,Cocokind Mymatcha,Moisture Stick,9.99,0,9.99,bcb,http://dummyimage.com/156x113.jpg/dddddd/000000,"Pagac, Walsh and Friesen",77,84207
+30,Accure,Night Cream,8.35,4,10.46,bcb,http://dummyimage.com/100x154.jpg/5fa2dd/ffffff,"Nikolaus, Daniel and Glover",53,65987
