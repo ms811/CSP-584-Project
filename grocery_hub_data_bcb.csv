@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode
+1,Acure,Cleansing Gel,33.35,0,33.52,bcb,/images/bcb/1.jpg,"Parker, Johnson and Lehner",50,54897
+2,Bonef,Liquid Soap,11.07,6,19.97,bcb,/images/bcb/2.webp," Hayes",18,74698
+3,Pacifica,Perfume,11.69,2,16.81,bcb,/images/bcb/3.webp,"Wisozk, Hayes and Barton",17,89665
+4,Nemat,Perfume,54.28,7,90.12,bcb,/images/bcb/4.webp,Bartoletti LLC,79,74523
+5,Acure,Eye Cream,17.38,3,24.23,bcb,/images/bcb/5.jpg,Pagac-Ryan,74,68300
+6,Heritage,Rose Water Spray,8.79,3,14.74,bcb,/images/bcb/6.jpg,Boehm Inc,92,85412
+7,Alba,Aloe Vera Gel,19.25,7,24.9,bcb,/images/bcb/7.jpg,Donnelly and Sons,13,25416
+8,Badger,Sun Screen,13.24,7,25.9,bcb,/images/bcb/8.jpg,Mante Group,05,35243
+9,Hemp,Lip Balm,8.49,1,9.4,bcb,/images/bcb/9.jpg,"Hudson, Wisozk and King",88,03016
+10,Gillette,Proglide Razer,12.77,0,12.77,bcb,/images/bcb/10.jpg,Wyman Group,43,04990 CEDEX 9
+11,Tweezerman,Tweezers,6.80,3,12.27,bcb,/images/bcb/11.jpg,Franecki Group,22,70593
+12,Andalou,Shaving Cream,7.99,1,8.82,bcb,/images/bcb/12.webp,VonRueden-Haag,12,74698
+13,Evolve,Detangle Brush,7.22,3,10.51,bcb,/images/bcb/13.jpg,"Champlin, Hayes and Corkery",85,4446
+14,Chatto,Hair Loss Repair Creme,33.57,3,48.41,bcb,/images/bcb/14.jpg,"Stiedemann, Ratke and McKenzie",73,27095
+15,Chatto,Shampoo,20.08,5,42.97,bcb,/images/bcb/15.jpg,Grant-Batz,09,45896
+16,Giovanni,Tea Tree Shampoo,4.9,1,5.04,bcb,/images/bcb/16.webp,Maggio-Gutkowski,45,12377
+17,Alaffia,Bar Soap,8.73,0,8.73,bcb,/images/bcb/17.jpg,"Carter, Gibson and Pfannerstill",82,35214
+18,Accure,Hydrating Gel,12.51,7,43.48,bcb,/images/bcb/18.jpg,"McKenzie, Kling and Nolan",41,85423
+19,Mineral,Eyeliner,6.49,5,15.24,bcb,/images/bcb/19.jpg,"Fisher, Wunsch and Beer",59,39804
+20,Burt's Bee,Moisturizing Lip Care,4.55,0,4.55,bcb,/images/bcb/20.jpg,"Bednar, Krajcik and Becker",18,36528
+21,Hurts Dee,Lip Balm,4.35,1,5.06,bcb,/images/bcb/21.webp,"Funk, Wehner and Gutmann",99,65489
+22,Alba Botanica,Baby Shampoo,31.14,8,55.35,bcb,/images/bcb/22.jpg,"Christiansen, Ryan and Vandervort",99,59878
+23,Verta,Sunscreen,5.34,1,6.17,bcb,/images/bcb/23.jpg,Sanford-O'Kon,61,39630
+24,Pacifica,Hoilday Gift Set,8.14,4,75.24,bcb,/images/bcb/24.webp,Blanda-Blick,48,25489
+25,Evenhealy,Oil and Water Skin Care Set,42.89,1,47.10,bcb,/images/bcb/25.webp,Roob LLC,06,54879
+26,MyChelle,Sun Shield Clear Spray,12.92,1,14.57,bcb,/images/bcb/26.webp,Welch-Sporer,40,56987
+27,Andalou,Natural Face Lotion,13.10,7,17.80,bcb,/images/bcb/27.jpg,Hills-Sauer,77,65874
+28,Derma-E,Antiwrinkle Cream,16.10,0,16.10,bcb,/images/bcb/28.jpg,Mante-Spinka,23,56412
+29,Cocokind Mymatcha,Moisture Stick,9.99,0,9.99,bcb,/images/bcb/29.jpg,"Pagac, Walsh and Friesen",77,84207
+=======
 product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode
 1,Acure,Cleansing Gel,33.35,0,33.52,bcb,http://dummyimage.com/159x107.bmp/5fa2dd/ffffff,"Parker, Johnson and Lehner",50,54897
 2,Bonef,Liquid Soap,11.07,6,19.97,bcb,http://dummyimage.com/108x171.jpg/dddddd/000000," Hayes",18,74698
@@ -28,4 +60,5 @@ product_id,product_name,product_description,product_currentprice,product_discoun
 27,Andalou,Natural Face Lotion,13.10,7,17.80,bcb,http://dummyimage.com/157x129.png/ff4444/ffffff,Hills-Sauer,77,65874
 28,Derma-E,Antiwrinkle Cream,16.10,0,16.10,bcb,http://dummyimage.com/144x201.png/cc0000/ffffff,Mante-Spinka,23,56412
 29,Cocokind Mymatcha,Moisture Stick,9.99,0,9.99,bcb,http://dummyimage.com/156x113.jpg/dddddd/000000,"Pagac, Walsh and Friesen",77,84207
+>>>>>>> 74098ff8a64e66a1a1de818dc4a2667148913dbb
 30,Accure,Night Cream,8.35,4,10.46,bcb,http://dummyimage.com/100x154.jpg/5fa2dd/ffffff,"Nikolaus, Daniel and Glover",53,65987

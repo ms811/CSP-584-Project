@@ -1,9 +1,16 @@
-
 <%@page import="java.util.ArrayList" %>
-
-        <%@ include file="../parts/header.jsp"%>
-        <%@ include file="../parts/navbar.jsp"%>
-
+    <head>
+        <%@ include file="header.jsp"%>
+        <%@ include file="navbar.jsp"%>
+        <style>
+            .container {
+                max-width: 80vw;
+                margin: auto;
+                background: white;
+                padding: 10px;
+                }
+        </style>
+        </head>
         <div class="container">    
             <div class="row">
                 <!-- This section is for the product image -->
@@ -56,7 +63,7 @@
                     <div class="row add-to-cart">
                         <form method="post" action="pages/AddCart.jsp">
                         <div class="col-md-5 product-qty">
-                            Quantiy:
+                            Quantity:
                             <input type="number" id="myNumber" value ='1' min="1" max='<%=request.getParameter("inventory")%>' name="quantity" />
                         </div>
 
@@ -85,14 +92,14 @@
                          <a href="#features" aria-controls="features" role="tab" data-toggle="tab">Features</a>
                         </li>
                         <li role="presentation">
-                         <a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a>
+                         <a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Add Review</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#showreviews" aria-controls="notes" role="tab" data-toggle="tab">ShowReviews</a>
                         </li>
                         <li role="presentation">
                          <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a>
                         </li>
-                        <li role="presentation">
-                            <a href="#addreviews" aria-controls="reviews" role="tab" data-toggle="tab">addReviews</a>
-                           </li>
                     </ul>
 
                     <div class="tab-content">
@@ -103,87 +110,82 @@
                             <input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_description")%>' name="product_description"/>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="notes">
-                            <input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_description")%>' name="product_description"/>
+                            <form id="feedback" action="mongodbconnections/reviews.jsp">
+                                <div class="pinfo">Your personal info</div>
+                                <div class="pinfo">Name</div>   
+                            <div class="form-group">
+                                <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input  name="name" placeholder="John Doe" class="form-control"  type="text">
+                                </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="pinfo">Date</div>
+                            <div class="form-group">
+                                <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input name="date" type="date" class="form-control" >
+                                </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="pinfo">Rate our Product.</div>
+                            
+                            <div class="form-group">
+                                <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+                                <select class="form-control" name = "rating" id="rating">
+                                    <option value="1star">1</option>
+                                    <option value="2stars">2</option>
+                                    <option value="3stars">3</option>
+                                    <option value="4stars">4</option>
+                                    <option value="5stars">5</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                </div>
+                            
+                            <br><br>
+
+                            <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_name")%>' name="productname" id="productname"/></h1>
+                            <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_id")%>' name="productid" id="productid"/></h1>
+                            <div class="pinfo">Write your feedback.</div>
+                            <div class="form-group">
+                                <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                <textarea class="form-control" name = "feedback" id="feedback" rows="3"></textarea>
+                                </div>
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            
+                            
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="showreviews">
+                            <h1>reviews</h1>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="reviews">
                             <form id="feedback" action="../pages/review.jsp">
                             <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_name")%>' name="productname" id="productname"/></h1>
                             <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_id")%>' name="productid" id="productid"/></h1>
-                            <%@ include file="../pages/review.jsp"%>
+                            <%@ include file="review.jsp"%>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="addreviews">
-                             
-                                <form id="feedback" action="mongodbconnections/reviews.jsp">
-                                    <div class="pinfo">Your personal info</div>
-                                    <div class="pinfo">Name</div>   
-                                <div class="form-group">
-                                    <div class="col-md-12 inputGroupContainer">
-                                    <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input  name="name" placeholder="John Doe" class="form-control"  type="text">
-                                    </div>
-                                    </div>
-                                </div>
-                                <br><br>
-                                <div class="pinfo">Date</div>
-                                <div class="form-group">
-                                    <div class="col-md-12 inputGroupContainer">
-                                    <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                    <input name="date" type="date" class="form-control" >
-                                    </div>
-                                    </div>
-                                </div>
-                                <br><br>
-                                <div class="pinfo">Rate our Product.</div>
-                                
-                                <div class="form-group">
-                                    <div class="col-md-12 inputGroupContainer">
-                                    <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-heart"></i></span>
-                                    <select class="form-control" name = "rating" id="rating">
-                                        <option value="1star">1</option>
-                                        <option value="2stars">2</option>
-                                        <option value="3stars">3</option>
-                                        <option value="4stars">4</option>
-                                        <option value="5stars">5</option>
-                                        </select>
-                                        </div>
-                                    </div>
-                                    </div>
-                                
-                                <br><br>
-
-                                <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_name")%>' name="productname" id="productname"/></h1>
-                                <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_id")%>' name="productid" id="productid"/></h1>
-                                <div class="pinfo">Write your feedback.</div>
-                                <div class="form-group">
-                                    <div class="col-md-12 inputGroupContainer">
-                                    <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                    <textarea class="form-control" name = "feedback" id="feedback" rows="3"></textarea>
-                                    </div>
-                                    </div>
-                                </div>
-                                <br><br><br><br>
-                                
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                
-                                
-                                </form>
                         </div>
                        </div>
                 </div>
             </div>
         </div><br>
-
-        <%@ include file="../parts/footer.jsp"%>
-
         <%
         ArrayList<String> obg = new ArrayList<String>();
-
             String name = (String)request.getParameter("product_name");
             String image = (String)request.getParameter("product_image");
             String price = (String)request.getParameter("product_currentprice");
@@ -214,8 +216,19 @@
                        
             session.setAttribute("image", image);
             session.setAttribute("price", price);
-            session.setAttribute("obj",obg);
-            out.println(obg);%>
+            session.setAttribute("obj",obg);%>
 <div>
     
 </div>
+
+        <%@ include file="footer.jsp"%>
+
+<div>
+    
+</div>
+    <scipt>
+   
+    </scipt>
+    </body>
+
+</html>

@@ -45,7 +45,7 @@ vivek
     String pwd = request.getParameter("password");
 
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","f8lw2A9sp");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","root");
     Statement st = con.createStatement();
     
     ResultSet rs;

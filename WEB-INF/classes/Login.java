@@ -27,6 +27,7 @@ public class Login extends HttpServlet {
 		System.out.print("USER: "+username);
 		System.out.println("PASS:"+password);
 		HashMap<String, User> hm = new HashMap<String, User>();
+		HashMap<String, OrderItem> or = new HashMap<String, OrderItem>();
 		System.out.print("hashmap"+hm);
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 
@@ -49,6 +50,11 @@ public class Login extends HttpServlet {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("username", user.getName());
 				session.setAttribute("usertype", user.getUsertype());
+				try {
+					or = MySqlDataStoreUtilities.getAllOrders();
+				} catch (Exception e) {
+						System.out.println(e);
+				}
 				request.getRequestDispatcher("index.jsp").forward(request,response);
 				return;
 				}

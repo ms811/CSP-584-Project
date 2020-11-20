@@ -5,17 +5,18 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 
-        <%@ include file="../parts/header.jsp"%>
-        <%@ include file="../parts/navbar.jsp"%>
+        <%@ include file="header.jsp"%>
+        <%@ include file="navbar.jsp"%>
 
            <div class="container-fluid">
             <div class="row">
               <div class="col-sm-14">
                 <div class="panel panel-primary">
+                  
                   <c:forEach items="${Foodslist}" var="foodslist">
                     
                     <div class="col-md-3">
-                      <form id="myform" action=./product.jsp method="POST">
+                      <form id="myform" action=product.jsp method="POST">
                         <div>
                                 <input type="hidden" name = "product_id" value="${foodslist.product_id}">
                                 <input type="hidden" name = "product_name" value="${foodslist.product_name}">
@@ -44,7 +45,7 @@
                           
                           <div class="panel-footer">$${foodslist.product_discount} Off</div>
                           
-                                        <div><button  type="submit" class="btn btn-lg btn-brand btn-full-width"> <a><i>Item Details</i></a></button></div>
+                          <div><button  type="submit" class="btn btn-lg btn-brand btn-full-width"> <a><i>Item Details</i></a></button></div>
                                             
                         </div>
                         <div>  &nbsp;  </div>
@@ -65,6 +66,6 @@
 
         
 
-            <%@ include file="../parts/footer.jsp"%>
+            <%@ include file="footer.jsp"%>
  
             
