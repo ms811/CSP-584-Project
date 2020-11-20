@@ -8,11 +8,7 @@
       /* #maincontent {
         background-color: white;
       } */
-
-      #leftnavbar {
-        border-radius: 10%;
-      }
-
+      
       div {
         border-radius: 20%;
       }
@@ -24,10 +20,10 @@
   </head>
 
   <body>
-    <div class="container-fluid" >
-      <div class="col-lg-4" >
+    <div class="container-fluid">
+      <div class="col-lg-3" >
         <div class="col-sm">
-          <div class="panel panel-primary" id="leftnavbar">
+          <div class="panel panel-primary">
             <div class="panel-heading">Food</div>
             <div class="panel-body"><a href="${pageContext.request.contextPath}/Foodslist"><img src="./images/food.jpg" class="rounded" style="width:100%" alt="Food Image"></div>
             <div class="panel-footer">Veg-Non Veg</div>
