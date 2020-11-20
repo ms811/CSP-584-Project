@@ -118,7 +118,7 @@
   <body>
 
     <div class="container-fluid" >
-      <div class="col-lg-4" >
+      <div class="col-lg-3" >
         <div class="col-sm">
           <div class="panel panel-primary" id="leftnavbar">
             <div class="panel-heading" style="width: 100%;">Food</div>
