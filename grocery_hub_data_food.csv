@@ -1,0 +1,31 @@
+product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode
+1,Sunflower Seed Raw,Carroway Seed,242.47,9,442,food,/images/food/1.png,Aufderhar-Schoen,73,60601
+2,Sauce - Salsa,Lamb - Sausage Casings,96.20,2,486,food,/images/food/2.jpg,Durgan and Sons,09,41687
+3,Salmon Steak - Cohoe 6 Oz,Sobe - Cranberry Grapefruit,364.57,1,165,food,/images/food/3.jpg,"Nader, Leuschke and White",22,60645
+4,Motts Apple Juice,Fresh Juice,151.89,9,282,food,/images/food/4.jpg,D'Amore LLC,85,60235
+5,"Trout - Rainbow, Fresh",Sun - Dried Tomatoes,264.25,9,438,food,/images/food/5.jpg,Treutel-Baumbach,53,85236
+6,Lamb - Rack,Compound - Orange,103.54,1,314,food,/images/food/6.webp,Braun-Hansen,56,49652
+7,Wine - Acient Coast Caberne,"Beans - Black Bean, Canned",441.62,2,351,food,/images/food/7.jpg,Wilkinson LLC,43,57463
+8,Gherkin,Fresh,32.76,9,131,food,/images/food/8.jpg,Lind and Sons,30,60648
+9,"Crab - Claws, Snow 16 - 24",Mikes Hard Lemonade,259.66,4,453,food,/images/food/9.jpg,Smitham Group,57,57964
+10,"Oil - Olive, Extra Virgin",Tumeric,57.23,1,109,food,/images/food/10.png,Koss-Dare,14,46554
+11,Tea - Jasmin Green,Beer - Sleemans Honey Brown,422.12,7,171,food,/images/food/11.jpg,"Schneider, Becker and Zieme",61,82066
+12,"Shrimp - 16/20, Peeled Deviened",Chervil - Fresh, 351.24,0,151,food,/images/food/12.jpg,Runte and Sons,38,54732
+13,Pike - Frozen Fillet,Sprite - 355 Ml,311.17,3,448,food,/images/food/13.jpg,Osinski Group,84,95048
+14,"Shrimp - 16/20, Peeled Deviened","Juice - Tomato, 48 Oz",0.96,7,417,food,/images/food/14.jpg,Friesen LLC,82,39410
+15,Petite Baguette,Wine - Beaujolais Villages,122.17,2,151,food,/images/food/15.webp,"Schumm, Rodriguez and Hansen",62,47635
+16,Bar Special K,Sugar Thermometer,104.80,8,348,food,/images/food/16.jpg,Nicolas Group,51,14270
+17,Squid U5 - Thailand,Cake Slab,181.60,1,199,food,/images/food/17.jpg,"Koss, Gottlieb and Brekke",10,67137
+18,Eggplant - Asian,Fresh,31.06,6,51,food,/images/food/18.jpg,Cole-Brekke,64,63541
+19,Beer - Creemore,"Sugar - Brown, Individual",94.34,6,94,food,/images/food/19.jpg,Reichert-Walsh,53,78541
+20,Lettuce - Radicchio,Mushroom Morel Fresh,60.03,8,132,food,/images/food/20.jpg,Greenfelder and Sons,80,16222
+21,Extract Vanilla Pure,Salt - Seasoned,83.22,0,423,food,/images/food/21.jpg,Carter-Wisoky,59,75657
+22,Steampan - Foil,Pork - Ham Hocks - Smoked,115.69,8,380,food,/images/food/22.jpg,Harber-Hintz,05,68425
+23,Pop - Club Soda Can,Seedlings - Clamshell,89.54,8,53,food,/images/food/23.jpg,Sauer and Sons,53,52551
+24,Mix - Cappucino Cocktail,Phyllo Dough,439.22,6,361,food,/images/food/24.jpg,Rosenbaum-Turcotte,83,87452
+25,"Pepper - Chipotle, Canned",Spicy,68.51,8,199,food,/images/food/25.png,Romaguera-Rosenbaum,97,86659
+26,"Crab - Claws, 26 - 30",Liquid Aminios Acid - Braggs,81.38,6,399,food,/images/food/26.jpg,Herzog-Mohr,73,24129
+27,Pork - European Side Bacon,Pork - Backfat,160.98,9,61,food,/images/food/27.jpg,"Wuckert, Cruickshank and Buckridge",65,74562
+28,Beets,Juice - Orange 1.89l,331.33,0,91,food,/images/food/28.jpg,"Greenfelder, Stanton and Cartwright",19,50733
+29,Bread - Triangle White,Cheese - Parmesan Cubes,240.09,4,323,food,/images/food/29.jpg,Jenkins Group,17,64396
+30,Cabbage - Red,Wine - Periguita Fonseca,256.67,7,148,food,/images/food/30.jpg,"Bosco, O'Connell and Swaniawski",54,98273

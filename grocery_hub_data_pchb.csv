@@ -5,30 +5,30 @@ product_id,product_name,product_description,product_currentprice,product_discoun
 3,Biotin,Skin Glow,22.69,2,28.81,pchb,/images/pchb/3.webp,"Wisozk, Hayes and Barton",17,89665
 4,B Complex,Vitamins,34.28,7,70.12,pchb,/images/pchb/4.jpg,Bartoletti LLC,79,74523
 5,Cacy Lavender,Hydrosol,47.38,3,64.23,pchb,/images/pchb/5.webp,Pagac-Ryan,74,68300
-6,Zumu Oil,Massage and Body Oil,98.79,3,124,pchb,http://dummyimage.com/110x188.jpg/5fa2dd/ffffff,Boehm Inc,92,85412
-7,Galma,Massage Roller,19.25,7,24.9,pchb,http://dummyimage.com/239x150.jpg/ff4444/ffffff,Donnelly and Sons,13,25416
-8,Orgain,Sport Recovery,131.24,7,159,pchb,http://dummyimage.com/190x172.jpg/ff4444/ffffff,Mante Group,05,35243
-9,Focusaid,Energy Blend,80.49,1,85,pchb,http://dummyimage.com/230x163.bmp/cc0000/ffffff,"Hudson, Wisozk and King",88,03016
-10,Muna,Energy Bar,5.77,0,5.77,pchb,http://dummyimage.com/106x137.jpg/dddddd/000000,Wyman Group,43,04990 CEDEX 9
-11,Natos,Superfood Power Snack,61.80,3,126.27,pchb,http://dummyimage.com/157x194.png/ff4444/ffffff,Franecki Group,22,70593
-12,Rxbar,Protein Bar,22.99,1,36.52,pchb,http://dummyimage.com/147x125.jpg/ff4444/ffffff,VonRueden-Haag,12,74698
-13,Folly,Nutrition Protein Shakes,62,3,69.77,pchb,http://dummyimage.com/172x165.jpg/dddddd/000000,"Champlin, Hayes and Corkery",85,4446
-14,Gercky,Band Aid,121,3,148.41,pchb,http://dummyimage.com/109x153.bmp/ff4444/ffffff,"Stiedemann, Ratke and McKenzie",73,27095
-15,Phantom,Insect Repellant,128.08,5,142.97,pchb,http://dummyimage.com/232x102.png/5fa2dd/ffffff,Grant-Batz,09,45896
-16,Burme,Scar Gel Impulse,51.25,1,58.04,pchb,http://dummyimage.com/122x120.jpg/5fa2dd/ffffff,Maggio-Gutkowski,45,12377
-17,Cardon,Baby Wipes,189.73,5,255.52,pchb,http://dummyimage.com/190x128.bmp/dddddd/000000,"Carter, Gibson and Pfannerstill",82,35214
-18,Foxly,Probiotics,78.51,7,143.48,pchb,http://dummyimage.com/189x153.bmp/dddddd/000000,"McKenzie, Kling and Nolan",41,85423
-19,Derora,Organic Prunes,7.89,5,15.24,pchb,http://dummyimage.com/116x115.png/cc0000/ffffff,"Fisher, Wunsch and Beer",59,39804
-20,Lola,Kids Toothpaste,9.55,8,19.94,pchb,http://dummyimage.com/202x115.jpg/ff4444/ffffff,"Bednar, Krajcik and Becker",18,36528
-21,Hurts Dee,Lip Balm,64.35,1,72.56,pchb,http://dummyimage.com/119x246.bmp/dddddd/000000,"Funk, Wehner and Gutmann",99,65489
-22,Doper,Baby Shampoo,31.14,8,55.35,pchb,http://dummyimage.com/243x184.jpg/cc0000/ffffff,"Christiansen, Ryan and Vandervort",99,59878
-23,Solo,Red Superfood,45.34,3,68.17,pchb,http://dummyimage.com/123x163.bmp/5fa2dd/ffffff,Sanford-O'Kon,61,39630
-24,Bonad,Cynacobalamine Tablets,8.14,4,75.24,pchb,http://dummyimage.com/159x137.jpg/5fa2dd/ffffff,Blanda-Blick,48,25489
-25,Beta,Lipoic Acid,142.89,7,122.10,pchb,http://dummyimage.com/115x248.png/dddddd/000000,Roob LLC,06,54879
-26,Bhent,Amino Acid,35.92,1,40.97,pchb,http://dummyimage.com/237x145.jpg/cc0000/ffffff,Welch-Sporer,40,56987
-27,Carmen,Calcium Chews,132.10,7,178.30,pchb,http://dummyimage.com/157x129.png/ff4444/ffffff,Hills-Sauer,77,65874
-28,Vertilan,Probiotics,167.10,0,167.10,pchb,http://dummyimage.com/144x201.png/cc0000/ffffff,Mante-Spinka,23,56412
-29,Beamer,Epsom Salt,2.50,0,2.50,pchb,http://dummyimage.com/156x113.jpg/dddddd/000000,"Pagac, Walsh and Friesen",77,84207
+6,Zumu Oil,Massage and Body Oil,98.79,3,124,pchb,/images/pchb/6.jpg,Boehm Inc,92,85412
+7,Galma,Massage Roller,19.25,7,24.9,pchb,/images/pchb/7.jpg,Donnelly and Sons,13,25416
+8,Orgain,Sport Recovery,131.24,7,159,pchb,/images/pchb/8.jpg,Mante Group,05,35243
+9,Focusaid,Energy Blend,80.49,1,85,pchb,/images/pchb/9.jpg,"Hudson, Wisozk and King",88,03016
+10,Muna,Energy Bar,5.77,0,5.77,pchb,/images/pchb/10.jpg,Wyman Group,43,04990 CEDEX 9
+11,Navitas,Superfood Power Snack,61.80,3,126.27,pchb,/images/pchb/11.jpg,Franecki Group,22,70593
+12,Rxbar,Protein Bar,22.99,1,36.52,pchb,/images/pchb/12.webp,VonRueden-Haag,12,74698
+13,Folly,Nutrition Protein Shakes,62,3,69.77,pchb,/images/pchb/13.webp,"Champlin, Hayes and Corkery",85,4446
+14,Gercky,Band Aid,12,3,18.41,pchb,/images/pchb/14.webp,"Stiedemann, Ratke and McKenzie",73,27095
+15,Phantom,Insect Repellant,128.08,5,142.97,pchb,/images/pchb/15.jpg,Grant-Batz,09,45896
+16,Burme,Scar Gel Impulse,51.25,1,58.04,pchb,/images/pchb/16.jpg,Maggio-Gutkowski,45,12377
+17,Cardon,Baby Wipes,189.73,5,255.52,pchb,/images/pchb/17.jpg,"Carter, Gibson and Pfannerstill",82,35214
+18,Foxly,Probiotics,78.51,7,143.48,pchb,/images/pchb/18.webp,"McKenzie, Kling and Nolan",41,85423
+19,Derora,Organic Prunes,7.89,5,15.24,pchb,/images/pchb/19.webp,"Fisher, Wunsch and Beer",59,39804
+20,Toms,Kids Toothpaste,9.55,8,19.94,pchb,/images/pchb/20.jpg,"Bednar, Krajcik and Becker",18,36528
+21,Burts Bees,Lip Balm,64.35,1,72.56,pchb,/images/pchb/21.jpg,"Funk, Wehner and Gutmann",99,65489
+22,Doper,Baby Shampoo,31.14,8,55.35,pchb,/images/pchb/22.jpg,"Christiansen, Ryan and Vandervort",99,59878
+23,Solo,Red Superfood,45.34,3,68.17,pchb,/images/pchb/23.webp,Sanford-O'Kon,61,39630
+24,Bonad,Cynacobalamine Tablets,8.14,4,75.24,pchb,/images/pchb/24.jpg,Blanda-Blick,48,25489
+25,GNC,Alpha Lipoic Acid,122.10,0,122.10,pchb,/images/pchb/25.jpg,Roob LLC,06,54879
+26,ON,Amino Acid,35.92,1,40.97,pchb,/images/pchb/26.jpg,Welch-Sporer,40,56987
+27,Alive,Calcium Chews,132.10,7,178.30,pchb,/images/pchb/27.jpg,Hills-Sauer,77,65874
+28,New Rythum,Probiotics,167.10,0,167.10,pchb,/images/pchb/28.jpg,Mante-Spinka,23,56412
+29,Epsoak,Epsom Salt,2.50,0,2.50,pchb,/images/pchb/29.webp,"Pagac, Walsh and Friesen",77,84207
 =======
 product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode
 1,Tree Hut,Sugar Scrub Tropical Mango,43.35,0,43.52,pchb,http://dummyimage.com/159x107.bmp/5fa2dd/ffffff,"Bernier, D'Amore and Gutmann",50,54897
