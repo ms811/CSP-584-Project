@@ -90,13 +90,39 @@ public class AutoCompleteServlet extends HttpServlet {
 			if (action.equals("lookup"))
 			{
 				
-				HashMap<String,Product> data=AjaxUtility.getData();     	
+				HashMap<String,Product> data=AjaxUtility.getData();  
+				System.out.println("helloooooooooooooooooooooooooo"+data);   	
 				if ((searchId != null) && data.containsKey(searchId.trim())) 
 				{
-					request.setAttribute("Productlist",data.get(searchId.trim()));
-					request.getRequestDispatcher("pages//productdata.jsp").forward(request,response);	
-					// RequestDispatcher rd=context.getRequestDispatcher("pages//allproducts.jsp");
-					// rd.forward(request,response);
+					request.setAttribute("data",data.get(searchId.trim()));	
+					System.out.println("lllllllllllll"+data.get(searchId.trim()));
+					String x = data.get(searchId.trim()).getproduct_name();
+					int y = data.get(searchId.trim()).getproduct_id();
+					String z = data.get(searchId.trim()).getproduct_description();
+					Double a = data.get(searchId.trim()).getproduct_currentprice();
+					int b = data.get(searchId.trim()).getproduct_discount();
+					Double c = data.get(searchId.trim()).getproduct_actualprice();
+					String d = data.get(searchId.trim()).getproduct_category();
+					String e = data.get(searchId.trim()).getproduct_image();
+					String f = data.get(searchId.trim()).getproduct_manufacturer();
+					int g = data.get(searchId.trim()).getinventory();
+					String h = data.get(searchId.trim()).getstore_zipcode();
+					int i = data.get(searchId.trim()).getrating();
+					System.out.println(x+"oooooooooo");
+					request.setAttribute("product_name",x);
+					request.setAttribute("product_id",y);
+					request.setAttribute("product_description",z);
+					request.setAttribute("product_currentprice",a);
+					request.setAttribute("product_discount",b);
+					request.setAttribute("product_actualprice",c);
+					request.setAttribute("product_category",d);
+					
+					request.setAttribute("product_image",e);
+					request.setAttribute("product_manufacturer",f);
+					request.setAttribute("inventory",g);
+					request.setAttribute("store_zipcode",h);
+					request.setAttribute("rating",i);
+					request.getRequestDispatcher("productdata.jsp").forward(request,response);
 				}
 			}
 		}

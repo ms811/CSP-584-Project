@@ -425,7 +425,7 @@ body {
             </div>
           </div>
           <!-- /.col-md-12 -->
-          <div class="col-md-12 col-sm-12 pull-left posttimeline">
+          <!-- <div class="col-md-12 col-sm-12 pull-left posttimeline">
             <div class="panel panel-default">
               <div class="panel-body">
                 <div class="container">
@@ -465,7 +465,7 @@ body {
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
     </div>
   </div>

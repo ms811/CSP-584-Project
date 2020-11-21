@@ -14,7 +14,7 @@
 </script>
 <!------ Include the above in your HEAD tag ---------->
 <style>
-  body{padding-top:20px;}
+
 .carousel {
     margin-bottom: 0;
     padding: 0 40px 30px 40px;
@@ -48,13 +48,17 @@ background: #428bca;
 }
 .container {
   padding: 2px 16px;
+  background-color: #FFFFFF;
+  width: 80;
 }
 </style>
-<body>
-
-<div class="container">
+<body style='background-color: white;'>
+    
+<div class="content">
+    <div class="container">
     <div class="row">
         <div class="col-md-12">
+             <h3>Restaurants nearby:</h3>
                 <div id="Carousel" class="carousel slide">
                  
                 <ol class="carousel-indicators">
@@ -75,7 +79,7 @@ background: #428bca;
 
                     <c:forEach items="${Restaurantslist}" var="restaurantslist" begin="0" end="3">
                     
-                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
+                    <div class="col-md-3"><a href="${restaurantslist.url}" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
                                     
                                 
                                         
@@ -88,7 +92,7 @@ background: #428bca;
 
                     <c:forEach items="${Restaurantslist}" var="restaurantslist" begin="4" end="7">
                     
-                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
+                    <div class="col-md-3"><a href="${restaurantslist.url}" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
                                     
                                 
                                         
@@ -102,7 +106,7 @@ background: #428bca;
 
                     <c:forEach items="${Restaurantslist}" var="restaurantslist" begin="8" end="11">
                     
-                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
+                    <div class="col-md-3"><a href="${restaurantslist.url}" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
                                     
                                 
                                         
@@ -116,7 +120,7 @@ background: #428bca;
 
                     <c:forEach items="${Restaurantslist}" var="restaurantslist" begin="12" end="15">
                     
-                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
+                    <div class="col-md-3"><a href="${restaurantslist.url}" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
                                     
                                 
                                         
@@ -130,8 +134,8 @@ background: #428bca;
 
                     <c:forEach items="${Restaurantslist}" var="restaurantslist" begin="16" end="19">
                     
-                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
-                                    
+                    <div class="col-md-3"><a href="${restaurantslist.url}" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
+                                  
                                 
                                         
                     </c:forEach>
@@ -144,7 +148,7 @@ background: #428bca;
 
                     <c:forEach items="${Restaurantslist}" var="restaurantslist" begin="20" end="23">
                     
-                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
+                    <div class="col-md-3"><a href="${restaurantslist.url}" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
                                     
                                 
                                         
@@ -158,7 +162,7 @@ background: #428bca;
 
                     <c:forEach items="${Restaurantslist}" var="restaurantslist" begin="24" end="27">
                     
-                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
+                    <div class="col-md-3"><a href="${restaurantslist.url}" class="thumbnail"><img src="${restaurantslist.image}" alt="Image" style="width:250px;height:250px;"></a>  <div class="container"><h4><b>${restaurantslist.name}</b></h4> <p>${restaurantslist.rating}</p> </div></div>
                                     
                                 
                                         
@@ -204,6 +208,7 @@ background: #428bca;
                             </div>
                             </div>
                             </div>
+                        </div>                    
         </body>
 
 </html>

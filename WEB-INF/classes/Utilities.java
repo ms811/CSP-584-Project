@@ -3,7 +3,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -77,7 +79,7 @@ public String getFullURL() {
     url.append("/");
     return url.toString();
 }
-public void storeProduct(String id,String image,String name,int quantity, int price, String category){
+public void storeProduct(String id,String image,String name,Double quantity, Double price, String category){
     System.out.println("hiiiiiiiiiiiiiiiiiiiiiiiiiiii"+username());
     OrdersHashMap.orders.containsKey(username());
 
@@ -87,6 +89,10 @@ public void storeProduct(String id,String image,String name,int quantity, int pr
         }
         ArrayList<OrderItem> orderItems = OrdersHashMap.orders.get(username());
         HashMap<String,Foods> allfoods = new HashMap<String,Foods> (); 
+         HashMap<String,Foods> allpchb = new HashMap<String,Foods> (); 
+         HashMap<String,Foods> allbeverages = new HashMap<String,Foods> (); 
+         HashMap<String,Foods> allbcb = new HashMap<String,Foods> (); 
+
 
 
         if(category.equals("food")){
@@ -105,6 +111,59 @@ public void storeProduct(String id,String image,String name,int quantity, int pr
             orderItems.add(orderitem);
          // System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+orderItems);   
         }
+
+        if(category.equals("pchb")){
+            Foods foods;
+            try{
+                allpchb = MySqlDataStoreUtilities.getPchbItems();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+                        // System.out.println(allfoods);
+
+            foods = allpchb.get(id);
+            // System.out.println("llllllllllllllllllllllllllllllllll"+foods);
+            OrderItem orderitem = new OrderItem(foods.getproduct_image(), foods.getproduct_name(), quantity, price,foods.getproduct_discount(),category,foods.getproduct_id());
+            orderItems.add(orderitem);
+         // System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+orderItems);   
+        }
+
+        if(category.equals("beverages")){
+            Foods foods;
+            try{
+                allbeverages = MySqlDataStoreUtilities.getBeveragesItems();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+                        // System.out.println(allfoods);
+
+            foods = allbeverages.get(id);
+            // System.out.println("llllllllllllllllllllllllllllllllll"+foods);
+            OrderItem orderitem = new OrderItem(foods.getproduct_image(), foods.getproduct_name(), quantity, price,foods.getproduct_discount(),category,foods.getproduct_id());
+            orderItems.add(orderitem);
+         // System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+orderItems);   
+        }
+
+        if(category.equals("bcb")){
+            Foods foods;
+            try{
+                allbcb = MySqlDataStoreUtilities.getBcbItems();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+                        System.out.println(allbcb+"rrrrrrrrrrrrrrrrrrrrrr");
+
+            foods = allbcb.get(id);
+             System.out.println("llllllllllllllllllllllllllllllllll"+foods);
+            OrderItem orderitem = new OrderItem(foods.getproduct_image(), foods.getproduct_name(), quantity, price,foods.getproduct_discount(),category,foods.getproduct_id());
+            orderItems.add(orderitem);
+          System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+orderItems);   
+        }
+
+
 }
 
     public ArrayList<OrderItem> getCustomerOrders(){
@@ -119,4 +178,74 @@ public void storeProduct(String id,String image,String name,int quantity, int pr
         return getCustomerOrders().size();
         return 0;
     }
+
+    public void removeItemFromCart(String itemName) {
+        ArrayList<OrderItem> orderItems = OrdersHashMap.orders.get(username());
+        System.out.println("llllllllllllllllllllll"+orderItems);
+        int index = 0;
+        for (OrderItem oi : orderItems) {
+            if (oi.getName().equals(itemName)) {
+                System.out.println(oi.getName()+" hello"+oi.getName().equals(itemName));
+                break;
+            } else index++;
+        }
+        System.out.println(index);
+    
+        orderItems.remove(index);
+        System.out.println("pppppppppppppppp"+orderItems);
+        }
+    
+        /*  getOrdersPaymentSize Function gets  the size of OrderPayment */
+        public int getOrderPaymentSize(){
+            HashMap<Integer, ArrayList<OrderPayment>> orderPayments = new HashMap<Integer, ArrayList<OrderPayment>>();
+                try
+                {
+                    
+                    orderPayments = MySqlDataStoreUtilities.selectOrder();
+                }
+                catch(Exception e)
+                {
+                
+                }
+                int size=0;
+                for(Map.Entry<Integer, ArrayList<OrderPayment>> entry : orderPayments.entrySet()){
+                         size=size + 1;
+                         
+                }
+                return size;        
+        }
+    
+        // store the payment details for orders
+        public void storePayment(int userId,String customerName,String email,String userAddress,String creditCardNo,double discount,int orderId,LocalDate orderDate,LocalDate shippingDate,String orderName,String category,double orderPrice,String storeId,String storeAddress){
+            HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
+            //  // get the payment details file 
+                try
+                {
+            
+                    orderPayments = MySqlDataStoreUtilities.selectOrder();
+                }
+                catch(Exception e)
+                {
+                
+                }
+                if(orderPayments==null)
+                {
+                    orderPayments = new HashMap<Integer, ArrayList<OrderPayment>>();
+                }
+          
+    
+                try
+                {   
+                    
+                    Date orderDate1 = java.sql.Date.valueOf(orderDate);
+                    Date shippingDate1 = java.sql.Date.valueOf(shippingDate); 
+                    MySqlDataStoreUtilities.insertOrder(userId,customerName,email,userAddress,creditCardNo,discount,orderId,orderDate1,shippingDate1,orderName,category,orderPrice,storeId,storeAddress);
+    
+    
+                }
+                catch(Exception e)
+                {
+                    System.out.println("inside exception file not written properly");
+                }   
+        }
 }

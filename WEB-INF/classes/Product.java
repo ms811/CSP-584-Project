@@ -24,9 +24,9 @@ public class Product extends HttpServlet{
 	private int product_id;
 	private String product_name;
 	private String product_description;
-	private String product_currentprice;
+	private Double product_currentprice;
 	private int product_discount;
-	private int product_actualprice;
+	private Double product_actualprice;
 	private String product_category;
 	private String product_image;
 	private String product_manufacturer;
@@ -36,7 +36,7 @@ public class Product extends HttpServlet{
 	
 
 	
-	public Product(int product_id,  String product_name, String product_description,String product_currentprice, int product_discount, int product_actualprice, String product_category, String product_image, String product_manufacturer, int inventory, String store_zipcode, int rating){
+	public Product(int product_id,  String product_name, String product_description,Double product_currentprice, int product_discount, Double product_actualprice, String product_category, String product_image, String product_manufacturer, int inventory, String store_zipcode, int rating){
 		this.product_id=product_id;
 		this.product_name=product_name;
 		this.product_description=product_description;
@@ -73,10 +73,10 @@ public class Product extends HttpServlet{
 	public void setproduct_description(String product_description) {
 		this.product_description = product_description;
 	}
-	public String getproduct_currentprice() {
+	public Double getproduct_currentprice() {
 		return product_currentprice;
 	}
-	public void setproduct_currentprice(String product_currentprice) {
+	public void setproduct_currentprice(Double product_currentprice) {
 		this.product_currentprice = product_currentprice;
 	}
 
@@ -88,10 +88,10 @@ public class Product extends HttpServlet{
 		this.product_discount = product_discount;
 	}
 
-	public int getproduct_actualprice() {
+	public Double getproduct_actualprice() {
 		return product_actualprice;
 	}
-	public void setproduct_actualprice(int product_actualprice) {
+	public void setproduct_actualprice(Double product_actualprice) {
 		this.product_actualprice = product_actualprice;
 	}
 	public String getproduct_category() {
@@ -130,8 +130,8 @@ public class Product extends HttpServlet{
 	public int getrating() {
 		return rating;
 	}
-	public void setstore_zipcode(int rating) {
-		this.rating = rating;
+	public void setrating(int rating) {
+		this.rating= rating;
 	}
 
 }

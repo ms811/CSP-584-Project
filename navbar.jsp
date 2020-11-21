@@ -18,10 +18,10 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.jsp">Home</a></li>
         <li><a href="Productlist">Products</a></li>
-        <li><a href="#">Deals</a></li>
+        <!-- <li><a href="#">Deals</a></li> -->
         <li><a href="stores.jsp">Stores</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="trending.jsp">Trending</a></li>
+        <!-- <li><a href="#">Categories</a></li> -->
+        <!-- <li><a href="trending.jsp">Trending</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li></li>
@@ -41,8 +41,8 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
             if (session.getAttribute("usertype").equals("StoreManager")){ %>
               <li><a href="ProductModify.jsp">ProductModify</a></li>
               <li><a href="Vieworder.jsp">View orders</a></li>
-              <li><a href="#">Sales Report</a></li>
-              <li><a href="#"> ***********</a></li>
+              <!-- <li><a href="#">Sales Report</a></li> -->
+              <!-- <li><a href="#"> ***********</a></li> -->
               <li><a href="accountpage.jsp"><span class="glyphicon glyphicon-hand-right"></span> <% out.println("Hello "+session.getAttribute("username")+"<br>"); %></a></li>
               <li><a href="accountpage.jsp"><span class="glyphicon glyphicon-hand-right"></span> Your Account</a></li>
               <li><a href="Logout" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>

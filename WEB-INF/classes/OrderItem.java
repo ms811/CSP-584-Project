@@ -19,14 +19,14 @@ import javax.servlet.http.HttpServletResponse;
 
 public class OrderItem extends HttpServlet{
 	private String name;
-	private int price;
+	private Double price;
 	private String image;
 	private String category;
 	private int discount;
-	private int quantity;
+	private Double quantity;
 	private int id;
 	
-	public OrderItem(String image, String name, int quantity, int price, int discount, String category, int id){
+	public OrderItem(String image, String name, Double quantity, Double price, int discount, String category, int id){
 		this.image=image;
 		this.name=name;
 		this.quantity=quantity;
@@ -52,19 +52,19 @@ public class OrderItem extends HttpServlet{
 		this.name = name;
 	}
 
-	public int getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
-	public int getQuantity() {
+	public Double getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(Double quantity) {
 		this.quantity = quantity;
 	}
 

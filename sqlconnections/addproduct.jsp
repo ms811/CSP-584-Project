@@ -24,7 +24,7 @@
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "root");
     Statement st=conn.createStatement();
     int i=st.executeUpdate("insert into grocery_food(product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode,rating)values('"+productID+"','"+ProductName+"','"+productDes+"','"+productCPrice+"','"+productDis+"','"+productAPrice+"','"+productCat+"','"+productImg+"','"+productMan+"','"+productInv+"','"+productZip+"','"+productRating+"')");
-    response.sendRedirect("../login.jsp");
+    response.sendRedirect("../ProductModify.jsp");
     }
     catch(Exception e)
     {

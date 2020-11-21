@@ -30,11 +30,19 @@
 }
 
 #form-buscar >.form-group >.input-group > .form-control:focus {
-  border-color: #33A444;
+  border-color: #000000;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(0, 109, 0, 0.8);
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(0, 109, 0, 0.8);
 }
+td,th {
+    padding: 0;
+    background-color: aliceblue;
+    width: 90px;
+    position:relative;
+
+  }
+
 </style>
 <script src="javascript.js"></script>
 <div class="container">

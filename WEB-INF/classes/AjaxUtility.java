@@ -77,7 +77,7 @@ public class AjaxUtility {
 
             while(rs.next())
             {   
-                Product p = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getString("product_currentprice"),rs.getInt("product_discount"),rs.getInt("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("inventory"));
+                Product p = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
                 hm.put(rs.getString("product_id"), p);
             }
         }
@@ -105,9 +105,9 @@ public class AjaxUtility {
                 pst.setInt(1,entry.getValue().getproduct_id());
                 pst.setString(2,entry.getValue().getproduct_name());
                 pst.setString(3,entry.getValue().getproduct_name());
-                pst.setString(4,entry.getValue().getproduct_currentprice());
+                pst.setDouble(4,entry.getValue().getproduct_currentprice());
                 pst.setInt(5,entry.getValue().getproduct_discount());
-                pst.setInt(6,entry.getValue().getproduct_actualprice());
+                pst.setDouble(6,entry.getValue().getproduct_actualprice());
                 pst.setString(7,entry.getValue().getproduct_category());
                 pst.setString(8,entry.getValue().getproduct_image());
                 pst.setString(9,entry.getValue().getproduct_manufacturer());

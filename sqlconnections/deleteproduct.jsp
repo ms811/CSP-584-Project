@@ -14,7 +14,7 @@
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "root");
     Statement st=conn.createStatement();
     int i=st.executeUpdate("delete from grocery_food where product_id='"+productID+"'");
-    response.sendRedirect("../pages/ProductModify.jsp");
+    response.sendRedirect("../ProductModify.jsp");
     }
     catch(Exception e)
     {

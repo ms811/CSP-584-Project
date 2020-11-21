@@ -123,8 +123,8 @@ th, td {
 </style>
 </head>
 <body>
-    <%@ include file="../parts/header.jsp"%>
-        <%@ include file="../parts/navbar.jsp"%>
+    <%@ include file="header.jsp"%>
+        <%@ include file="navbar.jsp"%>
 
 
 <div >
@@ -190,6 +190,6 @@ th, td {
     </div>
   </div>
   <br><br>
-  <%@ include file="../parts/footer.jsp"%>  
+  <%@ include file="footer.jsp"%>  
   </body>
 </html>

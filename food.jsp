@@ -7,6 +7,7 @@
 
         <%@ include file="header.jsp"%>
         <%@ include file="navbar.jsp"%>
+        <%@ include file="searchbar.jsp" %>
 
            <div class="container-fluid">
             <div class="row">
@@ -53,7 +54,7 @@
                     </form>
                     </div>
                                     
-                                
+                           
                                         
                     </c:forEach>
   

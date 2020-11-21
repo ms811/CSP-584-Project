@@ -2,6 +2,7 @@
     <head>
         <%@ include file="header.jsp"%>
         <%@ include file="navbar.jsp"%>
+        
         <style>
             .container {
                 max-width: 80vw;
@@ -47,24 +48,23 @@
                     <div class="row">
                         <div class="col-md-12 bottom-rule">
                             <h2 class="product-price"><input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_currentprice")%>' name="product_currentprice"/>
-                                <input disabled type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_id")%>' name="product_id"/>
-                                <input disabled type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_description")%>' name="product_description"/>
-                                <input disabled type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_discount")%>' name="product_discount"/>
-                                <input disabled type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_actualprice")%>' name="product_actualprice"/>
-                                <input disabled type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_actualprice")%>' name="product_manufacturer"/>
                                 
-                                <input disabled type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_zipcode")%>' name="product_zipcode"/>
-                                <input disabled type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("rating")%>' name="rating"/>
 
                             </h2>
                         </div>
                     </div>
 
                     <div class="row add-to-cart">
-                        <form method="post" action="pages/AddCart.jsp">
+                        <form method="post" action="CartServlet">
                         <div class="col-md-5 product-qty">
                             Quantity:
                             <input type="number" id="myNumber" value ='1' min="1" max='<%=request.getParameter("inventory")%>' name="quantity" />
+                            <input type="hidden" value='<%=request.getParameter("product_currentprice")%>' name="price"/>
+                            <input type="hidden" value='<%=request.getParameter("product_id")%>' name="id"/>
+                                <input type="hidden" value='<%=request.getParameter("product_name")%>' name="name"/>
+                                <input type="hidden" value='<%=request.getParameter("product_image")%>' name="image"/>
+                                <input type="hidden" value='<%=request.getParameter("product_category")%>' name="category"/>
+                       
                         </div>
 
                         <div class="col-md-4">
@@ -139,11 +139,11 @@
                                 <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-heart"></i></span>
                                 <select class="form-control" name = "rating" id="rating">
-                                    <option value="1star">1</option>
-                                    <option value="2stars">2</option>
-                                    <option value="3stars">3</option>
-                                    <option value="4stars">4</option>
-                                    <option value="5stars">5</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                     </select>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                             <h1>reviews</h1>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="reviews">
-                            <form id="feedback" action="../pages/review.jsp">
+                            <form id="feedback" action="review.jsp">
                             <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_name")%>' name="productname" id="productname"/></h1>
                             <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_id")%>' name="productid" id="productid"/></h1>
                             <%@ include file="review.jsp"%>

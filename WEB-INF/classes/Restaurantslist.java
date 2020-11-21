@@ -20,7 +20,7 @@ public class Restaurantslist extends HttpServlet {
 	
     
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	  
+		
        try{
 
 			restaurantslist = MySqlDataStoreUtilities.getRestaurants();
@@ -30,9 +30,9 @@ public class Restaurantslist extends HttpServlet {
 		{
 
 		}
-			// System.out.println("After catch"+restaurantslist);
+			System.out.println("After catch aaaaaaaaaaaaaaaaaaaaaa"+restaurantslist);
 
         request.setAttribute("Restaurantslist",restaurantslist);
-        request.getRequestDispatcher("pages//food.jsp").forward(request,response);
+        request.getRequestDispatcher("corousel.jsp").include(request,response);
     }
 }
