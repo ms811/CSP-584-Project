@@ -1,0 +1,31 @@
+product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode
+1,Mop and Glot,Floor Cleaner,$7.35,0,$7.52,household,http://dummyimage.com/159x107.bmp/5fa2dd/ffffff,"Bernier, D'Amore and Gutmann",50,58469
+2,Persil,Laundry Detergent,$22,0,$22,household,/images/household/2.jpg,"Parker, Johnson and Lehner",18,84523
+3,Dawn Ultra,Dishwashing Liquid,$15,2,$14.70,household,/images/household/3.jpg,"Wisozk, Hayes and Barton",17,89665
+4,Meyers Clean Day,"Multi - Surface, Everyday Cleaner",$12,0,$12,household,/images/household/4.jpg,Meyers,79,25469
+5,Mr Clean,Magic Eraser,$14,3,$13.56,household,/images/household/5.jpg,Pagac-Ryan,74,68300
+6,Affresh,Washing Machine Cleaner,$11,3,$10.67,household,/images/household/6.jpg,Boehm Inc,92,45863
+7,Clorox,Healthcare Bleach,$14,5,$13.30,household,/images/household/7.jpg,Donnelly and Sons,13,24896
+8,Hefty,Trash Bags,$14.99,5,$12.14,household,/images/household/8.jpg,Mante Group,05,35243
+9,All,Liquid Detergent,$14.99,0,$14.99,household,/images/household/9.webp,"Hudson, Wisozk and King",88,53016
+10,Lysol,Automatic Toilet Bowl Cleaner,$5.99,20,$3.97,household,/images/household/10.png,Wyman Group,43,54990
+11,Pledge,Multisurface Spray,$14.61,15,$12.39,household,/images/household/11.jpg,Franecki Group,22,79593
+12,Tide Pods,Laundry Detergent Pacs,$21.99,0,$21.99,household,/images/household/12.jpg,VonRueden-Haag,12,65412
+13,Swiffer,Dusters,$12,3,$11.64,household,/images/household/13.jpg,"Champlin, Hayes and Corkery",85,44446
+14,Bounty,Paper Towels,$40,5,$38,household,/images/household/14.jpg,"Stiedemann, Ratke and McKenzie",73,27495
+15,Puracy,All Purpose Cleaner,$14,5,$13.30,household,/images/household/15.jpg,Grant-Batz,09,98565
+16,Glisten,Disposer Care Freshner,$4,1,$3.96,household,/images/household/16.jpg,Maggio-Gutkowski,45,12387
+17,Swiffer,Dry Sweeping Cloths,$12,0,$12,household,/images/household/17.webp,"Carter, Gibson and Pfannerstill",82,45236
+18,Mr Clean,Deep Cleaning Spray,$20,5,$19,household,/images/household/18.jpg,"McKenzie, Kling and Nolan",41,84536
+19,Gonzo,Disinfectant,$25,5,$23.75,household,/images/household/19.jpg,"Fisher, Wunsch and Beer",59,39854
+20,Clorox,Cleanup Bleach,$20,1,$19.80,household,/images/household/20.webp,"Bednar, Krajcik and Becker",18,
+21,Glad,Trash Bags,$15,1,$14.85,household,/images/household/21.jpg,"Funk, Wehner and Gutmann",99,65241
+22,Weiman,Cooktop Cleaner,$14,4,$13.44,household,/images/household/22.jpg,"Christiansen, Ryan and Vandervort",99,24587
+23,Scotch Brite,Non Scratch Scrub Sponges,$10,3,$9.70,household,/images/household/23.jpg,Sanford-O'Kon,61,39639
+24,Cascade Platinum,Dishwasher Pods,$20,4,$19.20,household,/images/household/24.jpg,Blanda-Blick,48,45896
+25,Febreeze,Air Freshner,$15,7,$13.95,household,/images/household/25.jpg,Roob LLC,06,36541
+26,Seventh Generation,Kitchen Cleaner,$70,10,$63,household,/images/household/26.jpg,Welch-Sporer,40,75632
+27,Oxiclean,Washingmachine Cleaner,$12,0,$12,household,/images/household/27.jpg,Hills-Sauer,77,15489
+28,Simple Green,Industrial Cleaner,$10,0,$10,household,/images/household/28.jpg,Mante-Spinka,23,95478
+29,Windex,Window Cleaner,$5,5,$4.75,household,/images/household/29.jpg,"Pagac, Walsh and Friesen",77,84268
+30,Easy Off,Oven Cleaner,$12,4,$11.52,household,/images/household/30.jpg,"Nikolaus, Daniel and Glover",53,12578
