@@ -80,12 +80,12 @@
                 <br>
                 <div class="row">
                     <div class="column" style="background-color:white;">
-                        <form>
+                        <form action="login.jsp">
                             <label for="fname">Grocery Hub</label><br>
                             <address id = "address3">
                             </address>
                             <input type="hidden" id="fname" name="fname">
-                            <button id = "store" type="button" class="btn btn-success" value = '3' onclick="change(3)">Select</button>
+                            <button id = "store" name="store" type="button" class="btn btn-success" value = '3' onclick="change(3)">Select</button>
                         </form>
                     </div>
                 </div>

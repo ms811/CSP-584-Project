@@ -121,6 +121,7 @@ function callback(results, status) {
 
 function createMarker(place,i) {
   var placeLoc = place.geometry.location;
+  console.log(place);
   console.log("address"+i);
   if (i<7){
       resultset.push(place.vicinity);

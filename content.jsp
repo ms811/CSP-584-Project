@@ -136,7 +136,7 @@
         <div class="col-sm"> 
           <div class="panel panel-primary">
             <div class="panel-heading">Household</div>
-            <div class="panel-body"><a href="${pageContext.request.contextPath}/household.jsp"><img src="./images/household.jpg" class="img-responsive" style="width:100%" alt="Household Supplies Image"></a></div>
+            <div class="panel-body"><a href="${pageContext.request.contextPath}/Householdlist"><img src="./images/household.jpg" class="img-responsive" style="width:100%" alt="Household Supplies Image"></a></div>
             <div class="panel-footer">Dish Washing Liquids, Clothes Surf etc</div>
           </div>
         </div>

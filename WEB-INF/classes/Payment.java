@@ -129,8 +129,9 @@ public class Payment extends HttpServlet {
 			System.out.println("hello prands");
 			Random rand = new Random(); 
 			int ConfirmationNo = rand.nextInt(10000000);
-			int userId = rand.nextInt(10);
+			int userId = rand.nextInt(1000);
 			int assi = rand.nextInt(40);
+			int review = rand.nextInt(5);
 			int orderId=utility.getOrderPaymentSize()+assi;
 			
 			
@@ -160,6 +161,12 @@ public class Payment extends HttpServlet {
 			}else{
 				transactionStatus = "Approved";
 			}
+			int rev;
+			if(review==0){
+				rev = 1;
+			}else{
+				rev = review;
+			}
 			
 			//iterate through each order
 
@@ -169,7 +176,7 @@ public class Payment extends HttpServlet {
 
 				//set the parameter for each column and execute the prepared statement
 				System.out.println();
-				utility.storePayment(userId,customerName,email,userAddress,creditCardNo,oi.getDiscount(),orderId,orderDate,shippingDate,oi.getName(),oi.getCategory(),oi.getPrice(),"homedelivery","homedelivery");
+				utility.storePayment(userId,customerName,email,userAddress,creditCardNo,oi.getDiscount(),orderId,orderDate,shippingDate,oi.getName(),oi.getCategory(),oi.getPrice(),"homedelivery","homedelivery",zipcode,orderDeliveredOnTime,transactionStatus,rev);
 			}
 
 

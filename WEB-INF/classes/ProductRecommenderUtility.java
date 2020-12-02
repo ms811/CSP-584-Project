@@ -73,7 +73,7 @@ public class ProductRecommenderUtility{
 		try
 		{
 			String msg = getConnection();
-			String selectProd="select * from  grocery_food where product_id=?";
+			String selectProd="select * from  groceryhub where product_id=?";
 			PreparedStatement pst = conn.prepareStatement(selectProd);
 			pst.setInt(1,Integer.parseInt(product));
 			ResultSet rs = pst.executeQuery();

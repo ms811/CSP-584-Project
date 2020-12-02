@@ -19,11 +19,31 @@ public class User implements Serializable{
 	private String name;
 	private String password;
 	private String usertype;
+	private String zipCode;
+	private String email;
 	
-	public User(String name, String password, String usertype) {
+	public User(String name, String password, String usertype, String zipCode, String email) {
 		this.name=name;
 		this.password=password;
 		this.usertype=usertype;
+		this.zipCode=zipCode;
+		this.email=email;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
 	public int getId() {

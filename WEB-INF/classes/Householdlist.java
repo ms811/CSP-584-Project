@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
 
-@WebServlet("/Beverageslist")
+@WebServlet("/Householdlist")
 
-public class Beverageslist extends HttpServlet {
+public class Householdlist extends HttpServlet {
 
 	/* Console Page Displays all the Consoles and their Information in Game Speed */
-	ArrayList<Foods> beverageslist = new ArrayList<Foods>();
+	ArrayList<Foods> householdlist = new ArrayList<Foods>();
 	String reviewslist;
   //   public void init() throws ServletException
   //   {
 		
 		// try{
-		// 	beverageslist = MySqlDataStoreUtilities.getBeverages();
+		// 	bcblist = MySqlDataStoreUtilities.getBcb();
 		// 	HashMap<String, ArrayList<Review>> hm = MongoDBDataStoreUtilities.selectReview();
-  //           System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+beverageslist);
+  //           System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+bcblist);
 		// }
 		// catch(Exception e)
 		// {
@@ -36,16 +36,16 @@ public class Beverageslist extends HttpServlet {
 		
        try{
 
-			beverageslist = MySqlDataStoreUtilities.getBeverages();
+			householdlist = MySqlDataStoreUtilities.getHousehold();
 			System.out.println("khfvsrmjgtfdjycv,dsvfgxdhctmykv,guhkumhtgfedvfgbhnm,kjl");
 		}
 		catch(Exception e)
 		{
 
 		}
-			System.out.println("After catch"+beverageslist);
+			System.out.println("After catch for household"+householdlist);
 
-        request.setAttribute("Foodslist",beverageslist);
-        request.getRequestDispatcher("beverages.jsp").forward(request,response);
+        request.setAttribute("Foodslist",householdlist);
+        request.getRequestDispatcher("household.jsp").forward(request,response);
     }
 }

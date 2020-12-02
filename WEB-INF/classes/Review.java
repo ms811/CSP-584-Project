@@ -2,38 +2,38 @@ import java.io.IOException;
 import java.io.*;
 
 public class Review implements Serializable {
-    private String productName;
     private String Name;
-    private String productid;
+    private String user;
+    private String Id;
     private String date;
-    private String rating;
+    private String rate;
     private String feedback;
 
 
-    public Review(String productName, String Name, String productid, String date,
-                  String rating, String feedback) {
-        this.productName = productName;
+    public Review(String Name, String user, String Id, String date,
+                  String rate, String feedback) {
         this.Name = Name;
-        this.rating = rating;
-        this.productid= productid;
+        this.user= user;
+        this.rate = rate;
+        this.Id= Id;
         this.date = date;
         this.feedback = feedback;
     }
 
     public String getProductName() {
-        return productName;
-    }
-
-    public String getName() {
         return Name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public String getName() {
+        return user;
+    }
+
+    public void setProductName(String Name) {
+        this.Name = Name;
     }
 
     public String getRating() {
-        return rating;
+        return rate;
     }
 
     public String getFeedback() {
@@ -44,12 +44,12 @@ public class Review implements Serializable {
         this.feedback = feedback;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String user) {
+        this.user = user;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void setRating(String rate) {
+        this.rate = rate;
     }
 
     public String getDate() {
@@ -61,11 +61,11 @@ public class Review implements Serializable {
     }
 
     public String getProductId() {
-        return productid;
+        return Id;
     }
 
-    public void setProductId(String productid) {
-        this.productid = productid;
+    public void setProductId(String Id) {
+        this.Id = Id;
     }
 
 }

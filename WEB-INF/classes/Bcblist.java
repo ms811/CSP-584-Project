@@ -17,20 +17,20 @@ public class Bcblist extends HttpServlet {
 	/* Console Page Displays all the Consoles and their Information in Game Speed */
 	ArrayList<Foods> bcblist = new ArrayList<Foods>();
 	String reviewslist;
-    public void init() throws ServletException
-    {
+  //   public void init() throws ServletException
+  //   {
 		
-		try{
-			bcblist = MySqlDataStoreUtilities.getBcb();
-			HashMap<String, ArrayList<Review>> hm = MongoDBDataStoreUtilities.selectReview();
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+bcblist);
-		}
-		catch(Exception e)
-		{
+		// try{
+		// 	bcblist = MySqlDataStoreUtilities.getBcb();
+		// 	HashMap<String, ArrayList<Review>> hm = MongoDBDataStoreUtilities.selectReview();
+  //           System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+bcblist);
+		// }
+		// catch(Exception e)
+		// {
 
-		}
-        // System.out.println(allrestaurants.getName());
-    }
+		// }
+  //       // System.out.println(allrestaurants.getName());
+  //   }
     
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

@@ -54,11 +54,12 @@ public class AutoCompleteServlet extends HttpServlet {
 		{	
 			String action = request.getParameter("action");
             searchId = request.getParameter("searchId");
-            System.out.println(searchId);
+            System.out.println(searchId+"jjj"+action);
 			StringBuffer sb = new StringBuffer();
 			if (searchId != null && action.equals("complete")) {
 				searchId = searchId.trim().toLowerCase();
 			} 
+			System.out.println(searchId+": searchId");
 			if(searchId==null)	
 			{
 				context.getRequestDispatcher("/Error").forward(request, response);
@@ -71,6 +72,7 @@ public class AutoCompleteServlet extends HttpServlet {
 				{
 					AjaxUtility a=new AjaxUtility();
 					sb=a.readdata(searchId);
+					System.out.println(sb+"hello");
 					if(sb!=null || !sb.equals(""))
 					{
 						namesAdded=true;
@@ -79,6 +81,7 @@ public class AutoCompleteServlet extends HttpServlet {
 					{
 						response.setContentType("text/xml");
 						response.getWriter().write("<products>" + sb.toString() + "</products>");
+						System.out.println(sb+"check this data");
 					} 
 					else 
 					{
@@ -90,8 +93,9 @@ public class AutoCompleteServlet extends HttpServlet {
 			if (action.equals("lookup"))
 			{
 				
-				HashMap<String,Product> data=AjaxUtility.getData();  
-				System.out.println("helloooooooooooooooooooooooooo"+data);   	
+				HashMap<String,Product> data=AjaxUtility.getData(); 
+				System.out.println("trimming"+searchId); 
+				   	
 				if ((searchId != null) && data.containsKey(searchId.trim())) 
 				{
 					request.setAttribute("data",data.get(searchId.trim()));	

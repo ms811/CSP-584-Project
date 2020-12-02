@@ -31,6 +31,8 @@ public class Registration extends HttpServlet {
 		String password = request.getParameter("password");
 		String repassword = request.getParameter("confirm-password");
         String usertype = request.getParameter("userType");
+        String zipCode = request.getParameter("zipCode");
+        String email = request.getParameter("email");
         System.out.println(username);
         System.out.println(password);
         System.out.println(repassword);
@@ -61,10 +63,10 @@ public class Registration extends HttpServlet {
 				/*create a user object and store details into hashmap
 				store the user hashmap into file  */
 
-                User user = new User(username, password, usertype);
+                User user = new User(username, password, usertype,zipCode,email);
                 hm.put(username, user);
                 System.out.println(usertype);
-                if (MySqlDataStoreUtilities.insertUser(username, password, usertype)) {
+                if (MySqlDataStoreUtilities.insertUser(username, password, usertype,zipCode,email)) {
                     HttpSession session = request.getSession(true);
                     session.setAttribute("login_msg", "Your " + usertype + " account has been created. Please login");
                     if (!utility.isLoggedin()) {

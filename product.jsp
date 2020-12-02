@@ -1,4 +1,6 @@
 <%@page import="java.util.ArrayList" %>
+
+
     <head>
         <%@ include file="header.jsp"%>
         <%@ include file="navbar.jsp"%>
@@ -97,9 +99,7 @@
                         <li role="presentation">
                             <a href="#showreviews" aria-controls="notes" role="tab" data-toggle="tab">ShowReviews</a>
                         </li>
-                        <li role="presentation">
-                         <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a>
-                        </li>
+                        
                     </ul>
 
                     <div class="tab-content">
@@ -107,7 +107,8 @@
                             <input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_description")%>' name="product_description"/>
                         </div>
                         <div role="tabpanel" class="tab-pane top-10" id="features">
-                            <input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_description")%>' name="product_description"/>
+                            
+                        
                         </div>
                         <div role="tabpanel" class="tab-pane" id="notes">
                             <form id="feedback" action="mongodbconnections/reviews.jsp">
@@ -117,7 +118,7 @@
                                 <div class="col-md-12 inputGroupContainer">
                                 <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input  name="name" placeholder="John Doe" class="form-control"  type="text">
+                                <input  name="name" placeholder="Enter Your Name" class="form-control"  type="text">
                                 </div>
                                 </div>
                             </div>
@@ -163,72 +164,30 @@
                                 </div>
                             </div>
                             <br><br><br><br>
-                            
+                            <div>${Reviews}</div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             
                             
                             </form>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="showreviews">
-                            <h1>reviews</h1>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="reviews">
-                            <form id="feedback" action="review.jsp">
-                            <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_name")%>' name="productname" id="productname"/></h1>
-                            <h1><input type="hidden" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_id")%>' name="productid" id="productid"/></h1>
-                            <%@ include file="review.jsp"%>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
+
+<input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("user")%>' name="user"/>
+
+                            <div style="display: none;"><%@ include file="review.jsp"%>
+                        
                        </div>
+                   </c:forEach>
                 </div>
             </div>
         </div><br>
-        <%
-        ArrayList<String> obg = new ArrayList<String>();
-            String name = (String)request.getParameter("product_name");
-            String image = (String)request.getParameter("product_image");
-            String price = (String)request.getParameter("product_currentprice");
-            String id =(String)request.getParameter("product_id");
-            String description =(String)request.getParameter("product_description");
-            String discount =(String)request.getParameter("product_discount");
-            String actualprice =(String)request.getParameter("product_actualprice");
-            String category =(String)request.getParameter("product_category");
-            String manufacturer =(String)request.getParameter("product_manufacturer");
-            String inventory =(String)request.getParameter("inventory");
-            String zipcode =(String)request.getParameter("product_zipcode");
-            String rating =(String)request.getParameter("rating");
-            obg.add(id);
-            obg.add(name);
-            obg.add(description);
-            obg.add(price);
-            obg.add(discount);
-            obg.add(actualprice);
-            obg.add(category);
-            obg.add(image);
-            obg.add(manufacturer);
-            obg.add(inventory);
-            obg.add(zipcode);
-            obg.add(rating);
-            
-            
-            session.setAttribute("name", name);
-                       
-            session.setAttribute("image", image);
-            session.setAttribute("price", price);
-            session.setAttribute("obj",obg);%>
-<div>
-    
-</div>
+        </div>
+    </div><br><br>
 
         <%@ include file="footer.jsp"%>
 
-<div>
+
     
-</div>
-    <scipt>
-   
-    </scipt>
     </body>
 
 </html>

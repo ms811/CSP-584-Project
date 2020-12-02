@@ -411,6 +411,7 @@ body {
                 <div class="userpic"> <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="userpicimg"> </div>
                 <h3 class="username"><% out.print(session.getAttribute("username")); %></h3>
                 <p><% out.print(session.getAttribute("usertype")); %></p>
+
                 <div class="socials tex-center"> <a href="" class="btn btn-circle btn-primary ">
                 <i class="fa fa-facebook"></i></a> <a href="" class="btn btn-circle btn-danger ">
                 <i class="fa fa-google-plus"></i></a> <a href="" class="btn btn-circle btn-info ">

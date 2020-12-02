@@ -43,7 +43,7 @@ public class MongoDBDataStoreUtilities {
                 reviews.put(obj.getString("productName"), arr);
             }
             ArrayList<Review> listReview = reviews.get(obj.getString("productName"));
-            Review review = new Review(obj.getString("productName"), obj.getString("Name"), obj.getString("productid"),
+            Review review = new Review(obj.getString("Product Name"), obj.getString("Name"), obj.getString("Product id"),
                     obj.getString("date"), obj.getString("rating"), obj.getString("feedback"));
             //add to review hashmap
             listReview.add(review);
@@ -57,4 +57,39 @@ public class MongoDBDataStoreUtilities {
         }
         }
        
+
+  //      public static ArrayList <Mostsold> mostsoldProducts(){
+  //     ArrayList <Mostsold> mostsold = new ArrayList <Mostsold> ();
+  //     try{
+          
+      
+  //     getConnection();
+  //     DBObject groupProducts = new BasicDBObject("_id","$productName"); 
+  //     groupProducts.put("count",new BasicDBObject("$sum",1));
+  //     DBObject group = new BasicDBObject("$group",groupProducts);
+  //     DBObject limit=new BasicDBObject();
+  //     limit=new BasicDBObject("$limit",5);
+      
+  //     DBObject sortFields = new BasicDBObject("count",-1);
+  //     DBObject sort = new BasicDBObject("$sort",sortFields);
+  //     AggregationOutput output = myReviews.aggregate(group,sort,limit);
+      
+  //     for (DBObject res : output.results()) {
+      
+      
+       
+  //       String prodcutname =(res.get("_id")).toString();
+  //       String count = (res.get("count")).toString();   
+  //       Mostsold mostsld = new Mostsold(prodcutname,count);
+  //       mostsold.add(mostsld);
+    
+  //     }
+      
+     
+      
+  //   }catch (Exception e){ System.out.println(e.getMessage());}
+  //     return mostsold;
+  // } 
+
+  
     }

@@ -15,7 +15,8 @@ function init() {
 }
 
 function doCompletion() {
-    console.log("i am alive")
+    console.log(searchId.value);
+
     var url = "autocomplete?action=complete&searchId=" + escape(searchId.value);
     req = initRequest();
     req.open("GET", url, true);

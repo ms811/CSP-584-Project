@@ -17,20 +17,20 @@ public class Pchblist extends HttpServlet {
 	/* Console Page Displays all the Consoles and their Information in Game Speed */
 	ArrayList<Foods> pchblist = new ArrayList<Foods>();
 	String reviewslist;
-    public void init() throws ServletException
-    {
+  //   public void init() throws ServletException
+  //   {
 		
-		try{
-			pchblist = MySqlDataStoreUtilities.getPcbh();
-			HashMap<String, ArrayList<Review>> hm = MongoDBDataStoreUtilities.selectReview();
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+pchblist);
-		}
-		catch(Exception e)
-		{
+		// try{
+		// 	pchblist = MySqlDataStoreUtilities.getPcbh();
+		// 	HashMap<String, ArrayList<Review>> hm = MongoDBDataStoreUtilities.selectReview();
+  //           System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+pchblist);
+		// }
+		// catch(Exception e)
+		// {
 
-		}
-        // System.out.println(allrestaurants.getName());
-    }
+		// }
+  //       // System.out.println(allrestaurants.getName());
+  //   }
     
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

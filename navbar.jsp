@@ -31,8 +31,11 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
           if(session.getAttribute("username")!=null){
               String username = session.getAttribute("username").toString();
              if(session.getAttribute("usertype").equals("Customer")){ %>
-                    <li><a href="accountpage.jsp"><span class="glyphicon glyphicon-hand-right"></span> <% out.println("Hello "+session.getAttribute("username")+"<br>"); %></a></li>
+             <li><a><span class="glyphicon glyphicon-map-marker"></span> <% out.println(session.getAttribute("zipCode")+"<br>"); %></a></li>
+            <li><a href="accountpage.jsp"><span class="glyphicon glyphicon-hand-right"></span> <% out.println("Hello "+session.getAttribute("username")+"<br>"); %></a></li>
+
                     <li><a href="accountpage.jsp"><span class="glyphicon glyphicon-hand-right"></span> Your Account</a></li>
+                    <li><a href="ViewOrder" ><span></span>ViewOrder</a></li>                    
                     <li><a href="Logout" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
           <% 
@@ -40,9 +43,10 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
             }
             if (session.getAttribute("usertype").equals("StoreManager")){ %>
               <li><a href="ProductModify.jsp">ProductModify</a></li>
-              <li><a href="Vieworder.jsp">View orders</a></li>
-              <!-- <li><a href="#">Sales Report</a></li> -->
+              <li><a href="ViewOrder" ><span></span>ViewOrder</a></li> 
+              <li><a href="SalesReport">Sales Report</a></li>
               <!-- <li><a href="#"> ***********</a></li> -->
+
               <li><a href="accountpage.jsp"><span class="glyphicon glyphicon-hand-right"></span> <% out.println("Hello "+session.getAttribute("username")+"<br>"); %></a></li>
               <li><a href="accountpage.jsp"><span class="glyphicon glyphicon-hand-right"></span> Your Account</a></li>
               <li><a href="Logout" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
@@ -53,6 +57,7 @@ pageEncoding="ISO-8859-1" import="java.io.*, java.net.*"%>
           }
           if (session.getAttribute("username")==null){
                      %>
+                                         <li><a href="ViewOrder" ><span></span>ViewOrder</a></li>                    
                     <li><a href="./login.jsp" ><span class="glyphicon glyphicon-off"></span>Login</a></li>
                     <li><a href="./login.jsp"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
           <%

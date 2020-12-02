@@ -45,12 +45,16 @@ public class AjaxUtility {
         data=getData();
 
         Iterator it = data.entrySet().iterator();
+        
+        System.out.println(it.hasNext());
         while (it.hasNext())
         {
                     Map.Entry pi = (Map.Entry)it.next();
+                    
             if(pi!=null)
             {
                 Product p=(Product)pi.getValue();
+                
                 if (p.getproduct_name().toLowerCase().startsWith(searchId))
                 {
                         sb.append("<product>");
@@ -60,7 +64,6 @@ public class AjaxUtility {
                 }
             }
        }
-
        return sb;
     }
 
@@ -71,7 +74,7 @@ public class AjaxUtility {
         {
             getConnection();
 
-            String selectproduct="select * from grocery_food ";
+            String selectproduct="select * from groceryhub ";
             PreparedStatement pst = conn.prepareStatement(selectproduct);
             ResultSet rs = pst.executeQuery();
 

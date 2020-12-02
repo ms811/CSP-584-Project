@@ -92,7 +92,7 @@ public void storeProduct(String id,String image,String name,Double quantity, Dou
          HashMap<String,Foods> allpchb = new HashMap<String,Foods> (); 
          HashMap<String,Foods> allbeverages = new HashMap<String,Foods> (); 
          HashMap<String,Foods> allbcb = new HashMap<String,Foods> (); 
-
+HashMap<String,Foods> allhousehold = new HashMap<String,Foods> ();
 
 
         if(category.equals("food")){
@@ -144,6 +144,23 @@ public void storeProduct(String id,String image,String name,Double quantity, Dou
             OrderItem orderitem = new OrderItem(foods.getproduct_image(), foods.getproduct_name(), quantity, price,foods.getproduct_discount(),category,foods.getproduct_id());
             orderItems.add(orderitem);
          // System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+orderItems);   
+        }
+
+        if(category.equals("household")){
+            Foods foods;
+            try{
+                allhousehold = MySqlDataStoreUtilities.getHouseholdItems();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+                        System.out.println(allhousehold+"rrrrrrrrrrrrrrrrrrrrrr");
+
+            foods = allhousehold.get(id);
+             // System.out.println("llllllllllllllllllllllllllllllllll"+foods);
+            OrderItem orderitem = new OrderItem(foods.getproduct_image(), foods.getproduct_name(), quantity, price,foods.getproduct_discount(),category,foods.getproduct_id());
+            orderItems.add(orderitem);
+          // System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+orderItems);   
         }
 
         if(category.equals("bcb")){
@@ -216,7 +233,7 @@ public void storeProduct(String id,String image,String name,Double quantity, Dou
         }
     
         // store the payment details for orders
-        public void storePayment(int userId,String customerName,String email,String userAddress,String creditCardNo,double discount,int orderId,LocalDate orderDate,LocalDate shippingDate,String orderName,String category,double orderPrice,String storeId,String storeAddress){
+        public void storePayment(int userId,String customerName,String email,String userAddress,String creditCardNo,double discount,int orderId,LocalDate orderDate,LocalDate shippingDate,String orderName,String category,double orderPrice,String storeId,String storeAddress,String zipcode,String orderDeliveredOnTime,String transactionStatus,int review){
             HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
             //  // get the payment details file 
                 try
@@ -239,7 +256,7 @@ public void storeProduct(String id,String image,String name,Double quantity, Dou
                     
                     Date orderDate1 = java.sql.Date.valueOf(orderDate);
                     Date shippingDate1 = java.sql.Date.valueOf(shippingDate); 
-                    MySqlDataStoreUtilities.insertOrder(userId,customerName,email,userAddress,creditCardNo,discount,orderId,orderDate1,shippingDate1,orderName,category,orderPrice,storeId,storeAddress);
+                    MySqlDataStoreUtilities.insertOrder(userId,customerName,email,userAddress,creditCardNo,discount,orderId,orderDate1,shippingDate1,orderName,category,orderPrice,storeId,storeAddress,zipcode,orderDeliveredOnTime,transactionStatus,review);
     
     
                 }

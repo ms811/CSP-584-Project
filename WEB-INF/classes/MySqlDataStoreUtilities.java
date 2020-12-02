@@ -22,18 +22,20 @@ public class MySqlDataStoreUtilities {
         }
     }
 
-public static boolean insertUser(String username, String password, String userType) {
+public static boolean insertUser(String username, String password, String userType, String zipCode, String email) {
     try {
 
         getConnection();
         System.out.println(userType);
-        String insertIntoCustomerRegisterQuery = "INSERT INTO login(user,pass,usertype) "
-                + "VALUES (?,?,?);";
+        String insertIntoCustomerRegisterQuery = "INSERT INTO login(user,pass,usertype,zipCode,email) "
+                + "VALUES (?,?,?,?,?);";
 
         PreparedStatement pst = conn.prepareStatement(insertIntoCustomerRegisterQuery);
         pst.setString(1, username);
         pst.setString(2, password);
         pst.setString(3, userType);
+        pst.setString(4,zipCode);
+        pst.setString(5,email);
         pst.execute();
     } catch (Exception e) {
         System.out.println(e.getMessage());
@@ -43,7 +45,22 @@ public static boolean insertUser(String username, String password, String userTy
     return true;
 }
 
-public static void insertOrder(int userId,String customerName,String email,String userAddress,String creditCardNo,double discount,int orderId,Date orderTime,Date shippingDate,String orderName,String category,double orderPrice,String storeId,String storeAddress)
+public static boolean deleteOrder(int orderId) {
+        try {
+
+            getConnection();
+            String deleteOrderQuery = "Delete from customerorders where OrderId=?";
+            PreparedStatement pst = conn.prepareStatement(deleteOrderQuery);
+            pst.setInt(1, orderId);
+            pst.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+public static void insertOrder(int userId,String customerName,String email,String userAddress,String creditCardNo,double discount,int orderId,Date orderTime,Date shippingDate,String orderName,String category,double orderPrice,String storeId,String storeAddress,String zipCode, String deliveredOnTime, String transactionStatus,int review)
 {
     System.out.println("srtgetryerwtyergbtyvw4r5"+customerName);
     System.out.println(userAddress);
@@ -52,8 +69,8 @@ public static void insertOrder(int userId,String customerName,String email,Strin
     {
     
         getConnection();
-        String insertIntoCustomerOrderQuery = "INSERT INTO customerorders(userId,customerName,email,userAddress,creditCardNo,discount,orderId,orderTime,shippingDate,orderName,category,orderPrice,storeId,storeAddress)"
-        + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);";  
+        String insertIntoCustomerOrderQuery = "INSERT INTO customerorders(userId,customerName,email,userAddress,creditCardNo,discount,orderId,orderTime,shippingDate,orderName,category,orderPrice,storeId,storeAddress,zipCode,deliveredOnTime,transactionStatus,review)"
+        + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";  
             
         PreparedStatement pst = conn.prepareStatement(insertIntoCustomerOrderQuery);
         //set the parameter for each column and execute the prepared statement
@@ -68,12 +85,16 @@ public static void insertOrder(int userId,String customerName,String email,Strin
         pst.setDate(9,shippingDate);
         pst.setString(10,orderName);
         pst.setString(11,category);
-         pst.setDouble(12,orderPrice);
+        pst.setDouble(12,orderPrice);
         
         pst.setString(13,storeId);
         pst.setString(14,storeAddress);
+        pst.setString(15,zipCode);
+        pst.setString(16,deliveredOnTime);
+        pst.setString(17,transactionStatus);
+        pst.setInt(18,review);
 
-        
+        System.out.println("yyyyyy"+pst);
         pst.execute();
     }
     catch(Exception e)
@@ -91,7 +112,7 @@ public static HashMap<String, User> selectUser() {
         ResultSet rs = stmt.executeQuery(selectCustomerQuery);
 //        System.out.println(rs);
         while (rs.next()) {
-            User user = new User(rs.getString("user"), rs.getString("pass"), rs.getString("usertype"));
+            User user = new User(rs.getString("user"), rs.getString("pass"), rs.getString("usertype"),rs.getString("zipCode"),rs.getString("email"));
             hm.put(rs.getString("user"), user);
 
         }
@@ -141,6 +162,39 @@ public static HashMap<Integer, ArrayList<OrderPayment>> selectOrder()
     return orderPayments;
 }
 
+public static ArrayList<OrPayment> selectrder(int id)
+{   
+
+    ArrayList<OrPayment> orderPayments=new ArrayList<OrPayment>();
+        
+    try
+    {                   
+
+        getConnection();
+        //select the table 
+        String selectOrderQuery ="select * from customerorders where orderId=?";            
+        PreparedStatement pst = conn.prepareStatement(selectOrderQuery);
+        pst.setInt(1, id);
+        System.out.println(id+"just know");
+
+        ResultSet rs = pst.executeQuery();
+        while(rs.next()){
+             System.out.println("what else");
+            OrPayment order= new OrPayment(rs.getInt("userId"),rs.getString("customerName"),rs.getString("email"),rs.getString("userAddress"),rs.getString("creditCardNo"),rs.getInt("discount"),rs.getInt("orderId"),rs.getDate("orderTime"),rs.getDate("shippingDate"),rs.getString("orderName"),rs.getString("category"),rs.getDouble("orderPrice"),rs.getString("storeId"),rs.getString("storeAddress"),rs.getString("zipCode"),rs.getString("deliveredOnTime"),rs.getString("transactionStatus"),rs.getInt("review"));
+           
+            orderPayments.add(order);
+        }
+                
+                    
+    }
+    catch(Exception e)
+    {
+        System.out.println(e);
+    }
+   System.out.println(orderPayments+"pppppppppppppppppppppppppppppppppppppppppppp");
+    return orderPayments;
+}
+
 public static ArrayList<Restaurants> getRestaurants()
 {	
 	ArrayList<Restaurants> restaurantslist=new ArrayList<Restaurants>();
@@ -173,7 +227,7 @@ public static ArrayList<Foods> getFoods()
     {
         getConnection();
         
-        String selectFood="select * from  grocery_food where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"food");
         ResultSet rs = pst.executeQuery();
@@ -199,7 +253,7 @@ public static ArrayList<Foods> getPcbh()
     {
         getConnection();
         
-        String selectFood="select * from  grocery_pchb where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"pchb");
         ResultSet rs = pst.executeQuery();
@@ -225,7 +279,7 @@ public static ArrayList<Foods> getBeverages()
     {
         getConnection();
         
-        String selectFood="select * from  grocery_beverages where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"beverages");
         ResultSet rs = pst.executeQuery();
@@ -244,6 +298,32 @@ public static ArrayList<Foods> getBeverages()
     return beverageslist;
 }
 
+public static ArrayList<Foods> getHousehold()
+{   
+    ArrayList<Foods> householdlist=new ArrayList<Foods>();
+    try 
+    {
+        getConnection();
+        
+        String selectFood="select * from  groceryhub where product_category=?";
+        PreparedStatement pst = conn.prepareStatement(selectFood);
+        pst.setString(1,"household");
+        ResultSet rs = pst.executeQuery();
+    System.out.println(rs);
+        while(rs.next())
+        {   
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            householdlist.add(food);
+        }
+         // System.out.println(bcblist);
+    }
+    catch(Exception e)
+    {
+        System.out.println(e.getMessage());
+    }
+    return householdlist;
+}
+
 public static ArrayList<Foods> getBcb()
 {   
     ArrayList<Foods> bcblist=new ArrayList<Foods>();
@@ -251,7 +331,7 @@ public static ArrayList<Foods> getBcb()
     {
         getConnection();
         
-        String selectFood="select * from  grocery_bcb where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"bcb");
         ResultSet rs = pst.executeQuery();
@@ -277,7 +357,7 @@ public static HashMap<String,Foods> getFoodItems()
     {
         getConnection();
         
-        String selectLaptop="select * from  grocery_food where product_category=?";
+        String selectLaptop="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectLaptop);
         pst.setString(1,"food");
         ResultSet rs = pst.executeQuery();
@@ -305,7 +385,7 @@ public static HashMap<String,Foods> getPchbItems()
     {
         getConnection();
         
-        String selectLaptop="select * from  grocery_pchb where product_category=?";
+        String selectLaptop="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectLaptop);
         pst.setString(1,"pchb");
         ResultSet rs = pst.executeQuery();
@@ -332,7 +412,7 @@ public static HashMap<String,Foods> getBeveragesItems()
     {
         getConnection();
         
-        String selectLaptop="select * from  grocery_beverages where product_category=?";
+        String selectLaptop="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectLaptop);
         pst.setString(1,"beverages");
         ResultSet rs = pst.executeQuery();
@@ -352,6 +432,33 @@ public static HashMap<String,Foods> getBeveragesItems()
     return beverageslist;          
 }
 
+public static HashMap<String,Foods> getHouseholdItems()
+{   
+    HashMap<String,Foods> householdlist = new HashMap<String,Foods>();
+    try 
+    {
+        getConnection();
+        
+        String selectLaptop="select * from  groceryhub where product_category=?";
+        PreparedStatement pst = conn.prepareStatement(selectLaptop);
+        pst.setString(1,"household");
+        ResultSet rs = pst.executeQuery();
+    
+        while(rs.next())
+        {   
+            System.out.println("foodid: "+rs.getInt("product_id"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            householdlist.put(rs.getString("product_id"), food);                
+
+        }
+    }
+    catch(Exception e)
+    {
+
+    }
+    return householdlist;          
+}
+
 public static HashMap<String,Foods> getBcbItems()
 {   
     HashMap<String,Foods> bcblist = new HashMap<String,Foods>();
@@ -359,7 +466,7 @@ public static HashMap<String,Foods> getBcbItems()
     {
         getConnection();
         
-        String selectLaptop="select * from  grocery_bcb where product_category=?";
+        String selectLaptop="select * from  groceryhub where product_category=?";
         PreparedStatement pst = conn.prepareStatement(selectLaptop);
         pst.setString(1,"bcb");
         ResultSet rs = pst.executeQuery();
@@ -387,7 +494,7 @@ public static ArrayList<Product> getallproducts()
     {
         getConnection();
         
-        String allproducts="select * from  grocery_food ";
+        String allproducts="select * from  groceryhub ";
         PreparedStatement pst = conn.prepareStatement(allproducts);
         ResultSet rs = pst.executeQuery();
     
@@ -439,7 +546,7 @@ public static HashMap<String,OrderItem> getAllOrders()
     {
         getConnection();
         
-        String getorders="select * from  orders ";
+        String getorders="select * from  customerorders";
         PreparedStatement pst = conn.prepareStatement(getorders);
         ResultSet rs = pst.executeQuery();
         System.out.print("i am more than welcome"+rs);
@@ -458,9 +565,9 @@ public static HashMap<String,OrderItem> getAllOrders()
       {
         getConnection();
 
-        String selectConsole="select * from  grocery_food where product_category=?";
+        String selectConsole="select * from  groceryhub";
         PreparedStatement pst = conn.prepareStatement(selectConsole);
-        pst.setString(1,"food");
+       
         ResultSet rs = pst.executeQuery();
         // System.out.println("data"+rs.size());
         while(rs.next())
@@ -477,6 +584,50 @@ public static HashMap<String,OrderItem> getAllOrders()
       }
       return hm;
     }
+
+    public static HashMap<String, OrderPayment> selectSaleAmount() {
+    HashMap<String, OrderPayment> hm = new HashMap<String, OrderPayment>();
+    try {
+        getConnection();
+
+        //String selectAcc = "select DISTINCT(temp.orderName),temp.saleAmount,orders.orderPrice from orders, (select orderName, count(orderName) as saleAmount from orders group by orderName) as temp where orders.orderName = temp.orderName";
+        String selectAcc = "select DISTINCT(temp.orderName),temp.saleAmount,customerorders.orderPrice from customerOrders, (select orderName, count(orderName) as saleAmount from customerOrders group by orderName) as temp where customerorders.orderName = temp.orderName";
+        PreparedStatement pst = conn.prepareStatement(selectAcc);
+        ResultSet rs = pst.executeQuery();
+
+        int i = 0;
+        while (rs.next()) {
+            OrderPayment orderPayment = new OrderPayment(rs.getString("orderName"), rs.getDouble("orderPrice"), rs.getInt("saleAmount"));
+            i++;
+            hm.put(String.valueOf(i), orderPayment);
+            //orderPayment.setOrderId(Integer.parseInt(rs.getString("Id")));
+        }
+    } catch (Exception e) {
+        System.out.print(e);
+    }
+    return hm;
+}
+
+public static HashMap<String, OrderPayment> selectDailyTransaction() {
+    HashMap<String, OrderPayment> hm = new HashMap<String, OrderPayment>();
+    try {
+        getConnection();
+
+        String selectAcc = "SELECT count(orderTime) as soldAmount, orderTime from customerOrders group by orderTime";
+        PreparedStatement pst = conn.prepareStatement(selectAcc);
+        ResultSet rs = pst.executeQuery();
+
+        int i = 0;
+        while (rs.next()) {
+            OrderPayment orderPayment = new OrderPayment(rs.getInt("soldAmount"), rs.getDate("orderTime"));
+            i++;
+            hm.put(String.valueOf(i), orderPayment);
+            //orderPayment.setId(rs.getString("Id"));
+        }
+    } catch (Exception e) {
+    }
+    return hm;
+}
 
 
 }

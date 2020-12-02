@@ -111,9 +111,17 @@ public class CartServlet extends HttpServlet {
 		{
 			pw.print("<h4 style='color:red'>Your Cart is empty</h4>");
 		}
-		pw.print("<br><br>");	
+		pw.print("<br><br>");
+		pw.print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");	
 		request.getRequestDispatcher("footer.jsp").include(request, response);	
 }
-
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		Utilities utility = new Utilities(request, pw);
+		
+		displayCart(request, response);
+	}
 
 }

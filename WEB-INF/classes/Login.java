@@ -24,8 +24,11 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String usertype = request.getParameter("usertype");
+		String us = request.getParameter("store");
+		System.out.println("store address"+us);
 		System.out.print("USER: "+username);
 		System.out.println("PASS:"+password);
+
 		HashMap<String, User> hm = new HashMap<String, User>();
 		HashMap<String, OrderItem> or = new HashMap<String, OrderItem>();
 		System.out.print("hashmap"+hm);
@@ -39,6 +42,7 @@ public class Login extends HttpServlet {
 
 		User user = hm.get(username);
 		User check = hm.get(password);
+		
 		System.out.print("hmuser"+user.getUsertype());
 		System.out.println("hmusersdfsdfgdfgdfyer5ty"+check);
 
@@ -50,6 +54,9 @@ public class Login extends HttpServlet {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("username", user.getName());
 				session.setAttribute("usertype", user.getUsertype());
+				System.out.println("poooooooooooooooooooooo"+user.getZipCode());
+				session.setAttribute("email",user.getEmail());
+				session.setAttribute("zipCode",user.getZipCode());
 				try {
 					or = MySqlDataStoreUtilities.getAllOrders();
 				} catch (Exception e) {
