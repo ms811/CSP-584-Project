@@ -9,9 +9,9 @@ product_id,product_name,product_description,product_currentprice,product_discoun
 9,"Crab - Claws, Snow 16 - 24","Mikes Hard Lemonade",259.66,4,453,food,images/food/9.jpg,"Smitham Group",57,57964,4
 10,"Oil - Olive, Extra Virgin",Tumeric,57.23,1,109,food,images/food/10.png,Koss-Dare,14,46554,4
 11,"Tea - Jasmin Green","Beer - Sleemans Honey Brown",422.12,7,171,food,images/food/11.jpg,"Schneider, Becker and Zieme",61,82066,4
-12,"Shrimp - 16/20, Peeled Deviened","Chervil - Fresh",351.24,0,151,food,images/food/12.jpg,"Runte and Sons",38,54732,4
+12,"Shrimp - Peeled Deviened","Chervil - Fresh",351.24,0,151,food,images/food/12.jpg,"Runte and Sons",38,54732,4
 13,"Pike - Frozen Fillet","Sprite - 355 Ml",311.17,3,448,food,images/food/13.jpg,"Osinski Group",84,95048,4
-14,"Shrimp - 16/20, Peeled Deviened","Juice - Tomato, 48 Oz",0.96,7,417,food,images/food/14.jpg,"Friesen LLC",82,39410,4
+14,"Shrimp - Peeled Deviened","Juice - Tomato, 48 Oz",0.96,7,417,food,images/food/14.jpg,"Friesen LLC",82,39410,4
 15,"Petite Baguette","Wine - Beaujolais Villages",122.17,2,151,food,images/food/15.webp,"Schumm, Rodriguez and Hansen",62,47635,4
 16,"Bar Special K","Sugar Thermometer",104.8,8,348,food,images/food/16.jpg,"Nicolas Group",51,14270,4
 17,"Squid U5 - Thailand","Cake Slab",181.6,1,199,food,images/food/17.jpg,"Koss, Gottlieb and Brekke",10,67137,4
@@ -112,7 +112,7 @@ product_id,product_name,product_description,product_currentprice,product_discoun
 113,Alive,"Calcium Chews",132.1,7,178,pchb,images/pchb/27.jpg,Hills-Sauer,77,65874,4
 114,"New Rythum",Probiotics,167.1,0,167,pchb,images/pchb/28.jpg,Mante-Spinka,23,56412,4
 115,Epsoak,"Epsom Salt",2.5,0,3,pchb,images/pchb/29.webp,"Pagac, Walsh and Friesen",77,84207,4
-116,"Mop and Glot","Floor Cleaner",7.35,0,8,household,http://dummyimage.com/159x107.bmp/5fa2dd/ffffff,"Bernier, D'Amore and Gutmann",50,58469,5
+116,"Mop and Glot","Floor Cleaner",7.35,0,8,household,/images/household/1.jpg,"Bernier, D'Amore and Gutmann",50,58469,5
 117,Persil,"Laundry Detergent",22,0,22,household,/images/household/2.jpg,"Parker, Johnson and Lehner",18,84523,4
 118,"Dawn Ultra","Dishwashing Liquid",15,2,15,household,/images/household/3.jpg,"Wisozk, Hayes and Barton",17,89665,4
 119,"Meyers Clean Day","Multi - Surface, Everyday Cleaner",12,0,12,household,/images/household/4.jpg,Meyers,79,25469,4
