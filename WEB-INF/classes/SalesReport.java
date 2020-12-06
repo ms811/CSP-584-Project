@@ -54,8 +54,8 @@ public class SalesReport extends HttpServlet {
         HashMap<String, OrderPayment> orderPaymentHashMap = new HashMap<String, OrderPayment>();
 
         //Table of all product sold
-        pw.print("<div style='background-color:white;text-align: center;' id='content'>");
-        pw.print("<div id='content'>");
+        
+        pw.print("<div style='background-color:white;text-align: center; padding: 20px;' id='content'>");
         pw.print("<div class='post'>");
         pw.print("<u><h3 class='title'>");
         pw.print("Table of Product Sold :");
@@ -84,14 +84,14 @@ public class SalesReport extends HttpServlet {
             pw.print("</tr>");
 
         }
-        pw.print("</table><div style='display:none'>selectSaleAmount</div></div></div></div></div>");
+        pw.print("</table></div></div>");
 
 
         //Bar Chart of that shows the product names and the total sales for every product
 
         //////////<script>
         pw.println("<script type='text/javascript' src=\"https://www.gstatic.com/charts/loader.js\"></script>");
-        pw.println("<script type='text/javascript'>");
+        pw.println("<script type='text/javascript'>"); 
 
         // Load the Visualization API and the corechart package.
         pw.println("google.charts.load('current', {'packages':['corechart']});");
@@ -131,21 +131,21 @@ public class SalesReport extends HttpServlet {
 
 
         /////////</script>
-pw.print("<div style='background-color:white;text-align: center;' id='content'>");
-        pw.print("<div id='content'>");
+
+        
         pw.print("<div class='post'>");
         pw.print("<u><h3 class='title'>");
         pw.print("Bar Chart of Product Sold :");
         pw.print("</h3></u>");
         pw.print("<div class='entry'>");
         pw.println("<div id='chart_div'></div>");
-        pw.print("</div></div></div></div>");
+        pw.print("</div></div>");
 
 
 
         //Table of total daily sales transactions
-        pw.print("<div style='background-color:white;text-align: center;' id='content'>");
-        pw.print("<div id='content'>");
+        
+    
         pw.print("<div class='post'>");
         pw.print("<u><h3 class='title'>");
         pw.print("Table of Daily Sales Transactions :");
@@ -173,7 +173,7 @@ pw.print("<div style='background-color:white;text-align: center;' id='content'>"
             pw.print("</tr>");
 
         }
-        pw.print("</table></div></div></div></div>");
+        pw.print("</table></div></div></div>");
         pw.print("<br><br>");
         pw.print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");   
         request.getRequestDispatcher("footer.jsp").include(request, response);  

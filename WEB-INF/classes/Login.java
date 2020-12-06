@@ -62,7 +62,7 @@ public class Login extends HttpServlet {
 				} catch (Exception e) {
 						System.out.println(e);
 				}
-				request.getRequestDispatcher("index.jsp").forward(request,response);
+				response.sendRedirect("index.jsp");
 				return;
 				}
 			else{

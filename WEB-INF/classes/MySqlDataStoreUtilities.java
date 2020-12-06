@@ -220,21 +220,48 @@ public static ArrayList<Restaurants> getRestaurants()
 	return restaurantslist;
 }
 
-public static ArrayList<Foods> getFoods()
+public static ArrayList<Foods> getDeals()
+{   
+    ArrayList<Foods> dealslist=new ArrayList<Foods>();
+    try 
+    {
+        getConnection();
+        
+        String selectFood="select * from  groceryhub";
+        PreparedStatement pst = conn.prepareStatement(selectFood);
+       
+        ResultSet rs = pst.executeQuery();
+    System.out.println(rs);
+        while(rs.next())
+        {   
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
+            dealslist.add(food);
+        }
+        // System.out.println(hm);
+    }
+    catch(Exception e)
+    {
+        System.out.println(e.getMessage());
+    }
+    return dealslist;
+}
+
+public static ArrayList<Foods> getFoods(String vari)
 {   
     ArrayList<Foods> foodslist=new ArrayList<Foods>();
     try 
     {
         getConnection();
         
-        String selectFood="select * from  groceryhub where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=? and store_zipcode=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"food");
+        pst.setString(2,vari);
         ResultSet rs = pst.executeQuery();
     System.out.println(rs);
         while(rs.next())
         {   
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             foodslist.add(food);
         }
         // System.out.println(hm);
@@ -246,21 +273,50 @@ public static ArrayList<Foods> getFoods()
     return foodslist;
 }
 
-public static ArrayList<Foods> getPcbh()
+
+public static ArrayList<Foods> getSearch(String searc)
+{   
+    ArrayList<Foods> searchlist=new ArrayList<Foods>();
+    try 
+    {
+        getConnection();
+        
+        String selectFood="select * from  groceryhub where product_name=?";
+        PreparedStatement pst = conn.prepareStatement(selectFood);
+        pst.setString(1,searc);
+   
+        ResultSet rs = pst.executeQuery();
+    System.out.println(rs);
+        while(rs.next())
+        {   
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
+            searchlist.add(food);
+        }
+        // System.out.println(hm);
+    }
+    catch(Exception e)
+    {
+        System.out.println(e.getMessage());
+    }
+    return searchlist;
+}
+
+public static ArrayList<Foods> getPcbh(String vari)
 {   
     ArrayList<Foods> pchblist=new ArrayList<Foods>();
     try 
     {
         getConnection();
         
-        String selectFood="select * from  groceryhub where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=? and store_zipcode=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"pchb");
+        pst.setString(2,vari);
         ResultSet rs = pst.executeQuery();
     System.out.println(rs);
         while(rs.next())
         {   
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             pchblist.add(food);
         }
         // System.out.println(hm);
@@ -272,21 +328,22 @@ public static ArrayList<Foods> getPcbh()
     return pchblist;
 }
 
-public static ArrayList<Foods> getBeverages()
+public static ArrayList<Foods> getBeverages(String vari)
 {   
     ArrayList<Foods> beverageslist=new ArrayList<Foods>();
     try 
     {
         getConnection();
         
-        String selectFood="select * from  groceryhub where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=? and store_zipcode=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"beverages");
+        pst.setString(2,vari);
         ResultSet rs = pst.executeQuery();
     System.out.println(rs);
         while(rs.next())
         {   
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             beverageslist.add(food);
         }
          System.out.println(beverageslist);
@@ -298,21 +355,22 @@ public static ArrayList<Foods> getBeverages()
     return beverageslist;
 }
 
-public static ArrayList<Foods> getHousehold()
+public static ArrayList<Foods> getHousehold(String vari)
 {   
     ArrayList<Foods> householdlist=new ArrayList<Foods>();
     try 
     {
         getConnection();
         
-        String selectFood="select * from  groceryhub where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=? and store_zipcode=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"household");
+        pst.setString(2,vari);
         ResultSet rs = pst.executeQuery();
     System.out.println(rs);
         while(rs.next())
         {   
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             householdlist.add(food);
         }
          // System.out.println(bcblist);
@@ -324,21 +382,22 @@ public static ArrayList<Foods> getHousehold()
     return householdlist;
 }
 
-public static ArrayList<Foods> getBcb()
+public static ArrayList<Foods> getBcb(String vari)
 {   
     ArrayList<Foods> bcblist=new ArrayList<Foods>();
     try 
     {
         getConnection();
         
-        String selectFood="select * from  groceryhub where product_category=?";
+        String selectFood="select * from  groceryhub where product_category=? and store_zipcode=?";
         PreparedStatement pst = conn.prepareStatement(selectFood);
         pst.setString(1,"bcb");
+         pst.setString(2,vari);
         ResultSet rs = pst.executeQuery();
     System.out.println(rs);
         while(rs.next())
         {   
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             bcblist.add(food);
         }
          System.out.println(bcblist);
@@ -365,7 +424,7 @@ public static HashMap<String,Foods> getFoodItems()
         while(rs.next())
         {   
             System.out.println("foodid: "+rs.getInt("product_id"));
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             foodslist.put(rs.getString("product_id"), food);                
 
         }
@@ -393,7 +452,7 @@ public static HashMap<String,Foods> getPchbItems()
         while(rs.next())
         {   
             System.out.println("foodid: "+rs.getInt("product_id"));
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             pchblist.put(rs.getString("product_id"), food);                
 
         }
@@ -420,7 +479,7 @@ public static HashMap<String,Foods> getBeveragesItems()
         while(rs.next())
         {   
             System.out.println("foodid: "+rs.getInt("product_id"));
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             beverageslist.put(rs.getString("product_id"), food);                
 
         }
@@ -447,7 +506,7 @@ public static HashMap<String,Foods> getHouseholdItems()
         while(rs.next())
         {   
             System.out.println("foodid: "+rs.getInt("product_id"));
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             householdlist.put(rs.getString("product_id"), food);                
 
         }
@@ -474,7 +533,7 @@ public static HashMap<String,Foods> getBcbItems()
         while(rs.next())
         {   
             System.out.println("foodid: "+rs.getInt("product_id"));
-            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Foods food = new Foods(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             bcblist.put(rs.getString("product_id"), food);                
 
         }
@@ -501,7 +560,7 @@ public static ArrayList<Product> getallproducts()
         while(rs.next())
         {   
             System.out.println(rs.getInt("product_id"));
-            Product product = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Product product = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             allproductslist.add(product);                
 
         }
@@ -573,7 +632,7 @@ public static HashMap<String,OrderItem> getAllOrders()
         while(rs.next())
         { 
             System.out.println("1");
-            Product con = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+            Product con = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
             // System.out.println(rs.getString("product_name"));
             hm.put(rs.getInt("product_id"), con);
             con.setproduct_id(rs.getInt("product_id"));
@@ -629,5 +688,87 @@ public static HashMap<String, OrderPayment> selectDailyTransaction() {
     return hm;
 }
 
+    public static HashMap<String,Product> getData()
+    {
+      HashMap<String,Product> hm=new HashMap<String,Product>();
+      try
+      {
+        getConnection();
+        Statement stmt=conn.createStatement();
+        String selectCustomerQuery="select * from  groceryhub";
+        ResultSet rs = stmt.executeQuery(selectCustomerQuery);
+        while(rs.next())
+        { Product p = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
+          hm.put(rs.getString("product_name"), p);
+         
+        }
+      }
+      catch(Exception e)
+      {
+      e.printStackTrace();
+      }
+      return hm;
+    }
+
+    public static HashMap<String, Product> selectInventory() {
+    HashMap<String, Product> hm = new HashMap<String, Product>();
+    try {
+        getConnection();
+
+        String selectAcc = "select * from groceryhub";
+        PreparedStatement pst = conn.prepareStatement(selectAcc);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            Product product = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
+            hm.put(rs.getString("product_name"), product);
+            
+        }
+    } catch (Exception e) {
+
+    }
+
+    return hm;
+}
+
+public static HashMap<String, Product> selectOnSale() {
+    HashMap<String, Product> hm = new HashMap<String, Product>();
+    try {
+        getConnection();
+
+        String selectAcc = "select * from groceryhub where product_condition = 'NEW'";
+        PreparedStatement pst = conn.prepareStatement(selectAcc);
+      //  pst.setString(1, "1");
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            //Product product = new Product(rs.getString("productName"), rs.getDouble("productPrice"), Integer.parseInt(rs.getString("inventory")));
+            Product product = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
+            hm.put(rs.getString("product_name"), product);
+           
+        }
+    } catch (Exception e) {
+    }
+    return hm;
+}
+
+public static HashMap<String, Product> selectRebate() {
+    HashMap<String, Product> hm = new HashMap<String, Product>();
+    try {
+        getConnection();
+
+        String selectAcc = "select * from groceryhub where product_discount > 0";
+        PreparedStatement pst = conn.prepareStatement(selectAcc);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            Product product = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
+            hm.put(rs.getString("product_name"), product);
+           
+        }
+    } catch (Exception e) {
+    }
+    return hm;
+}
 
 }

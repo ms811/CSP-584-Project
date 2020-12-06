@@ -21,6 +21,7 @@
         -o-background-size: cover;
         background-size: cover;
         margin-bottom: 0;
+        margin: none;
         background-color: #1ee671;
     }
    
@@ -42,10 +43,54 @@
 </head>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
+<div class="jumbotron" style="border: 200px;">
+  <div class="text-center">
     <h1>Grocery Hub</h1>
-    <h3 id="getdata"></h3>      
+    <h3 id = "getdata">
+   <script>
+      function func(){
+        writeColor(sessionStorage.storeaddress);
+      }
+
+      function func1 (){
+        init();
+      }
+      function start(){
+          func();
+          func1();
+      }
+
+      window.onload = start();
+
+      function writeColor(color) {
+        console.log(color);
+        var value = '<%= session.getAttribute("zipCode") %>';
+
+        var x = '';
+
+        if(color == undefined){
+          console.log("hello");
+            if(value != "null"){
+              console.log("hellonull"+value);
+              document.getElementById("getdata").innerHTML = value;
+            }
+            else{
+               document.getElementById("getdata").innerHTML =x ;
+            }
+        }
+        else{
+            if(value != "null"){
+            document.getElementById("getdata").innerHTML = color;
+          }
+          else{
+             document.getElementById("getdata").innerHTML =x ;
+             sessionStorage.removeItem('storeaddress');
+          }
+
+        }
+      }
+      </script></h3>
+  
     <p>WE CARE FOR YOU</p>
     
   </div>

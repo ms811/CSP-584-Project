@@ -37,17 +37,18 @@
                         
                           
                           <div>
+
                               <c:if test="${foodslist.product_name==review.productName}">
-                              <input type="text" name = "Id" value="${review.productId}">
+
+                          
+                              <input type="hidden" name = "Id" value="${review.productId}">
                               <input type="hidden" name = "Name" value="${review.productName}">
                               <input type="hidden" name = "date" value="${review.date}">
                               <input type="hidden" name = "rate" value="${review.rating}">
                               <input type="hidden" name = "feedback" value="${review.feedback}">
                               <input type="hidden" name = "user" value="${review.name}">
-                             <%
-                              Object o = session.getAttribute("Reviews");
-                              System.out.println(o+"obtained");
-                             %>
+                              <input type="hidden" name = "zipCode" value="${review.zipCode}">
+                            
                    
 </c:if>
                           </div>

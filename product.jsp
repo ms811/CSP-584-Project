@@ -1,7 +1,8 @@
 <%@page import="java.util.ArrayList" %>
+<!DOCTYPE html>
+<!-- <html> -->
 
-
-    <head>
+    <!-- <head> -->
         <%@ include file="header.jsp"%>
         <%@ include file="navbar.jsp"%>
         
@@ -13,14 +14,23 @@
                 padding: 10px;
                 }
         </style>
-        </head>
+
+        <script>
+            function myFunction() {
+              document.getElementById("demo").innerHTML = "Thanks for the feedback";
+            }
+        </script>
+    <!-- </head> -->
+
+    <!-- <body> -->
         <div class="container">    
             <div class="row">
                 <!-- This section is for the product image -->
                 <div class="col-md-6">
                     <div class="panel panel-primary">
                     
-                    <div class="panel-body"><img src='<%=request.getParameter("product_image")%>' class="img-responsive" style="width:100%" alt="Moisturizer Image"></div>
+                    <div class="panel-body"><img src='<%=request.getParameter("product_image")%>' class="img-responsive" style="width:100%" alt="Moisturizer Image">
+                    </div>
                     </div>
                 </div>
 
@@ -49,7 +59,7 @@
 
                     <div class="row">
                         <div class="col-md-12 bottom-rule">
-                            <h2 class="product-price"><input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_currentprice")%>' name="product_currentprice"/>
+                            <h2 class="product-price"><input disabled type="text" style="border: none;border-color: transparent;"value='$<%=request.getParameter("product_currentprice")%>' name="product_currentprice"/>
                                 
 
                             </h2>
@@ -90,9 +100,7 @@
                         <li role="presentation" class="active">
                          <a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a>
                         </li>
-                        <li role="presentation">
-                         <a href="#features" aria-controls="features" role="tab" data-toggle="tab">Features</a>
-                        </li>
+                        
                         <li role="presentation">
                          <a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Add Review</a>
                         </li>
@@ -106,10 +114,7 @@
                         <div role="tabpanel" class="tab-pane active" id="description">
                             <input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("product_description")%>' name="product_description"/>
                         </div>
-                        <div role="tabpanel" class="tab-pane top-10" id="features">
-                            
                         
-                        </div>
                         <div role="tabpanel" class="tab-pane" id="notes">
                             <form id="feedback" action="mongodbconnections/reviews.jsp">
                                 <div class="pinfo">Your personal info</div>
@@ -148,7 +153,7 @@
                                     </select>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                             
                             <br><br>
 
@@ -164,19 +169,34 @@
                                 </div>
                             </div>
                             <br><br><br><br>
-                            <div>${Reviews}</div>
+                         
                             <button type="submit" class="btn btn-primary">Submit</button>
                             
                             
                             </form>
                         </div>
+
                         <div role="tabpanel" class="tab-pane" id="showreviews">
+                           <%
+                           System.out.println(request.getParameter("rate")+"ggggggggggg");
+                            if(request.getParameter("rate")!=null){
+                          System.out.println(request.getParameter("rate"));
+                            %>
+                        <h4><i><input type="text" style="border: none;border-color: transparent;width:300px;color:blue;"value='<%=request.getParameter("product_name")%> Reviews :' name="name"/>
+                                
+                          </i>  </h4>
+                          
+                          <div style="background-color: #E8E8E8">
 
-<input disabled type="text" style="border: none;border-color: transparent;"value='<%=request.getParameter("user")%>' name="user"/>
-
-                            <div style="display: none;"><%@ include file="review.jsp"%>
-                        
-                       </div>
+                          <h6><%=request.getParameter("rate")%><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Average Rating Approved by <%=request.getParameter("user")%></h6>
+                          <h6>verified on <%=request.getParameter("date")%></h6>
+                          <h6>user feedback : <%=request.getParameter("feedback")%></h6>
+                          <u><p disabled id="demo" style="cursor: pointer;" onclick="myFunction()">Helpful</p></u>
+                      </div>
+                      <%
+                        }
+                      %>
+                            <div style="display: none;"><%@ include file="review.jsp"%> </div>
                    </c:forEach>
                 </div>
             </div>
@@ -188,6 +208,6 @@
 
 
     
-    </body>
+    <!-- </body> -->
 
-</html>
+<!-- </html> -->

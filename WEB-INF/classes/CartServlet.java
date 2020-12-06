@@ -16,7 +16,7 @@ import javax.swing.JCheckBox;
 public class CartServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.setContentType("text/html");
+		response.setContentType("text/html");  
 		PrintWriter pw = response.getWriter();
 
 
@@ -57,7 +57,7 @@ public class CartServlet extends HttpServlet {
 		
 		request.getRequestDispatcher("header.jsp").include(request, response);
 		request.getRequestDispatcher("navbar.jsp").include(request, response);
-		pw.print("<div style='background-color:	#FFFFFF'>");
+		pw.print("<div style='background-color:	#FFFFFF; padding: 20px;'>");
 		pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
 		pw.print("<p style='font-size: 24px;'>Cart("+utility.CartCount()+")</p>");
 		pw.print("</h2><div class='entry'>");
@@ -73,7 +73,7 @@ public class CartServlet extends HttpServlet {
 		
 				pw.print("<tr style='height:100px'>");
 				pw.print("<th style='text-align:center'>Index</th><th></th><th></th><th></th><th></th><th style='text-align:center'>Product Image</th><th></th><th></th><th></th><th></th><th style='text-align:center'>Product Quantity</th><th style='text-align:center'>Product Name</th><th></th><th></th><th></th><th></th><th><th style='text-align:center'>Product Price</th>");
-				pw.print("/tr");
+				pw.print("</tr>");
 				for (OrderItem oi : utility.getCustomerOrders()) 
 			{
 				

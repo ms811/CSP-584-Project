@@ -195,22 +195,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
-      <% 
-      if(request.getParameter("username")==null){
-        
-      }else{
-        if(request.getParameter("password")==null){
-
-        }else{
-          String x = session.getAttribute("wrongpassword").toString();
-          boolean b = Boolean.parseBoolean(x);
-          if(b){
-            out.println("Enter Correct Password");
-          }
-        }
-      }
-
-      %>
+      
 								<a href="#" class="active" id="login-form-link">Login</a>
 							</div>
 							<div class="col-xs-6">
@@ -224,6 +209,31 @@
 							<div class="col-lg-12">
 								<form id="login-form" method="post" action="Login" role="form" style="display: block;">
 									<div class="form-group">
+                    <% 
+                    if(request.getParameter("username")==null){
+                      String x = (String)session.getAttribute("login_msg");
+                      System.out.println(x+"po ra pooka");
+                      if(x!=null){%>
+<div class="form-group">
+                    <input disabled type="text" name="message" id="username" style='border: none;border-color: transparent;background-color: white;color: red;text-align: center;' class="form-control"  value='<%out.println(x);%>'>
+                  </div>
+     <% }
+    
+        
+      }else{
+        if(request.getParameter("password")==null){
+
+        }else{
+          String y = "Username and passwords not matching";
+          %>
+          <div class="form-group">
+            <input disabled type="text" name="message" id="username" style='border: none;border-color: transparent;background-color: white;color: red;text-align: center;' class="form-control"  value='<%out.println(y);%>'>
+          </div>
+          <%
+        }
+      }
+
+      %>
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
@@ -269,9 +279,9 @@
                   <div class="form-group">
                     <input type="text" name="zipCode" id="zipCode" tabindex="2" class="form-control" placeholder="Enter ZIP-CODE" required>
                   </div>
-                                    <div class="form-group">
-                                        <h3>User Type</h3></td><td><select name='userType' class='input'><option value='Customer' selected>Customer</option><option value='StoreManager'>Store Manager</option></select>
-                                    </div> 
+                  <div class="form-group">
+                      <h3>User Type</h3></td><td><select name='userType' class='input'><option value='Customer' selected>Customer</option><option value='StoreManager'>Store Manager</option></select>
+                  </div> 
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">

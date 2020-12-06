@@ -5,25 +5,33 @@
 
     <%
 
-    String productID = request.getParameter("productID");    
-    String ProductName = request.getParameter("productName");
+    String id = request.getParameter("productID"); 
+    int productID=Integer.parseInt(id); 
+    String productName = request.getParameter("productName");
     String productDes = request.getParameter("productDes");
-    String productCPrice = request.getParameter("productCPrice");
-    String productDis = request.getParameter("productDis");
-    String productAPrice = request.getParameter("productAPrice");
+    String cprice = request.getParameter("productCPrice");
+            double productCPrice = Double.parseDouble(cprice); 
+    String dis = request.getParameter("productDis");
+    int productDis=Integer.parseInt(dis); 
+    String aprice = request.getParameter("productAPrice");
+            double productAPrice = Double.parseDouble(aprice); 
     String productCat = request.getParameter("productCat");
     String productImg = request.getParameter("productImg");
     String productMan = request.getParameter("productMan");
-    String productInv = request.getParameter("productInv");
+    String inv = request.getParameter("productInv");
+    int productInv=Integer.parseInt(inv);
     String productZip = request.getParameter("productZip");
-    String productRating = request.getParameter("productRating");   
-    System.out.println(ProductName);
+    String rating = request.getParameter("productRating");
+    int productRating=Integer.parseInt(rating); 
+    String productCondition ="NEW";  
+    
     try
     {
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "root");
     Statement st=conn.createStatement();
-    int i=st.executeUpdate("insert into grocery_food(product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode,rating)values('"+productID+"','"+ProductName+"','"+productDes+"','"+productCPrice+"','"+productDis+"','"+productAPrice+"','"+productCat+"','"+productImg+"','"+productMan+"','"+productInv+"','"+productZip+"','"+productRating+"')");
+    int i=st.executeUpdate("insert into groceryhub(product_id,product_name,product_description,product_currentprice,product_discount,product_actualprice,product_category,product_image,product_manufacturer,inventory,store_zipcode,rating,product_condition)values('"+productID+"','"+productName+"','"+productDes+"','"+productCPrice+"','"+productDis+"','"+productAPrice+"','"+productCat+"','"+productImg+"','"+productMan+"','"+productInv+"','"+productZip+"','"+productRating+"','"+productCondition+"')");
+    
     response.sendRedirect("../ProductModify.jsp");
     }
     catch(Exception e)

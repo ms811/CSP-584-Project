@@ -5,17 +5,12 @@ var completeTable;
 var autoRow;
 
 function init() {
-    console.log("hello ")
     searchId = document.getElementById("searchId");
-    console.log(searchId);
     completeTable = document.getElementById("complete-table");
-    console.log(completeTable);
     autoRow = document.getElementById("auto-row");
-    console.log(autoRow);
 }
 
 function doCompletion() {
-    console.log(searchId.value);
 
     var url = "autocomplete?action=complete&searchId=" + escape(searchId.value);
     req = initRequest();
@@ -51,7 +46,7 @@ function appendProduct(productName,productId) {
     var row;
     var cell;
     var linkElement;
-
+    
     if (isIE) {
         completeTable.style.display = 'block';
         row = completeTable.insertRow(completeTable.rows.length);
@@ -84,7 +79,7 @@ function clearTable() {
 
 
 function parseMessages(responseXML) {
-
+    
     // no matches returned
     if (responseXML == null) {
         return false;
@@ -95,7 +90,7 @@ function parseMessages(responseXML) {
         if (products.childNodes.length > 0) {
             completeTable.setAttribute("bordercolor", "black");
             completeTable.setAttribute("border", "1");
-
+    
             for (loop = 0; loop < products.childNodes.length; loop++) {
                 var product = products.childNodes[loop];
                 var productName = product.getElementsByTagName("productName")[0];

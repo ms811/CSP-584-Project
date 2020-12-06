@@ -27,11 +27,12 @@ DBCursor cursor = collection.find();
 doc = new BasicDBObject();
 
             doc.append("Name",request.getParameter("name"));
-            doc.append("Product Name",request.getParameter("productname"));
+            doc.append("productName",request.getParameter("productname"));
             doc.append("Product id",request.getParameter("productid"));
 			doc.append("date",request.getParameter("date"));
-            doc.append("rating",request.getParameter("rating"));
+            doc.append("reviewRating",request.getParameter("rating"));
             doc.append("feedback",request.getParameter("feedback"));
+            doc.append("zipCode",session.getAttribute("zipCode"));
 			collection.insert(doc);
 			mg.close();
 

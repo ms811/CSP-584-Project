@@ -33,10 +33,11 @@ public class Product extends HttpServlet{
 	private int inventory;
 	private String store_zipcode;
 	private int rating;
+	private String product_condition;
 	
 
 	
-	public Product(int product_id,  String product_name, String product_description,Double product_currentprice, int product_discount, Double product_actualprice, String product_category, String product_image, String product_manufacturer, int inventory, String store_zipcode, int rating){
+	public Product(int product_id,  String product_name, String product_description,Double product_currentprice, int product_discount, Double product_actualprice, String product_category, String product_image, String product_manufacturer, int inventory, String store_zipcode, int rating, String product_condition){
 		this.product_id=product_id;
 		this.product_name=product_name;
 		this.product_description=product_description;
@@ -49,6 +50,7 @@ public class Product extends HttpServlet{
 		this.inventory = inventory;
 		this.store_zipcode = store_zipcode;
 		this.rating = rating;
+		this.product_condition = product_condition;
 	}
 	
 	public Product(){
@@ -124,7 +126,7 @@ public class Product extends HttpServlet{
 	public String getstore_zipcode() {
 		return store_zipcode;
 	}
-	public void setrating(String store_zipcode) {
+	public void setstore_zipcode(String store_zipcode) {
 		this.store_zipcode = store_zipcode;
 	}
 	public int getrating() {
@@ -132,6 +134,12 @@ public class Product extends HttpServlet{
 	}
 	public void setrating(int rating) {
 		this.rating= rating;
+	}
+	public String getproduct_condition() {
+		return product_condition;
+	}
+	public void setproduct_condition(String product_condition) {
+		this.product_condition = product_condition;
 	}
 
 }

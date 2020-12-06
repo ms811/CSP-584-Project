@@ -52,6 +52,8 @@ public boolean isLoggedin(){
 public void logout(){
         session.removeAttribute("username");
         session.removeAttribute("usertype");
+        session.removeAttribute("login_msg");
+        session.removeAttribute("zipCode");
     }
 
 public String username(){

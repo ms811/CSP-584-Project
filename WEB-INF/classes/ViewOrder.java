@@ -31,8 +31,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		request.getRequestDispatcher("header.jsp").include(request, response);
 		request.getRequestDispatcher("navbar.jsp").include(request, response);
 		pw.print("<form name ='ViewOrder' action='ViewOrder' method='get'>");
-		pw.print("<div style='background-color:white;' id='content'><div class='post'><h2 class='title meta'>");
-		pw.print("<a style='font-size: 24px;'>Order</a>");
+		pw.print("<div style='background-color:white; padding: 20px;' id='content'><div class='post'><h2 class='title meta'>");
+		pw.print("<a style='font-size: 24px; display: flex; justify-content: center;'>Order</a>");
 		pw.print("</h2><div class='entry'>");
 
 		/*check if the order button is clicked 

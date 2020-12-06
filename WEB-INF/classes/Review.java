@@ -8,18 +8,26 @@ public class Review implements Serializable {
     private String date;
     private String rate;
     private String feedback;
+    private String zipCode;
 
 
     public Review(String Name, String user, String Id, String date,
-                  String rate, String feedback) {
+                  String rate, String feedback, String zipCode) {
         this.Name = Name;
         this.user= user;
         this.rate = rate;
         this.Id= Id;
         this.date = date;
         this.feedback = feedback;
+        this.zipCode = zipCode;
     }
 
+    public Review(String Name, String zipCode, String rate, String feedback) {
+        this.Name = Name;
+        this.zipCode = zipCode;
+        this.rate = rate;
+        this.feedback =feedback;
+    }
     public String getProductName() {
         return Name;
     }
@@ -66,6 +74,14 @@ public class Review implements Serializable {
 
     public void setProductId(String Id) {
         this.Id = Id;
+    }
+
+    public String getzipCode() {
+        return zipCode;
+    }
+
+    public void setzipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
 }

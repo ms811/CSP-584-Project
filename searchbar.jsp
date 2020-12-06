@@ -48,7 +48,7 @@ td,th {
 <div class="container">
 <div class="col-md-6 col-md-offset-3">     
 <div class="row">
-<form role="form" id="form-buscar">
+<form role="form" action="Searcher" id="form-buscar">
 <div class="form-group">
 <div class="input-group">
 <input type="text" name="searchId" value = "" class="form-control" id="searchId" onkeyup="doCompletion()" placeholder="Search..." required/>

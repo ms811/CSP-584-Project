@@ -64,24 +64,26 @@ public class ProductRecommenderUtility{
                 }
             }
 		}
+		System.out.println("jjjjjjjjjjjjjjjjjjjjjjjjjj"+prodRecmMap);
 
 		return prodRecmMap;
 	}
 
 	public static Product getProduct(String product){
+		System.out.println(product+"name of the product");
 		Product prodObj = new Product();
 		try
 		{
 			String msg = getConnection();
-			String selectProd="select * from  groceryhub where product_id=?";
+			String selectProd="select * from  groceryhub where product_name=?";
 			PreparedStatement pst = conn.prepareStatement(selectProd);
-			pst.setInt(1,Integer.parseInt(product));
+			pst.setString(1,product);
 			ResultSet rs = pst.executeQuery();
             System.out.println(rs);
 			while(rs.next())
 			{
-                System.out.println(rs.getInt("product_id"));
-				prodObj = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"));
+                System.out.println(rs.getString("product_name"));
+				prodObj = new Product(rs.getInt("product_id"),rs.getString("product_name"),rs.getString("product_description"),rs.getDouble("product_currentprice"),rs.getInt("product_discount"),rs.getDouble("product_actualprice"),rs.getString("product_category"),rs.getString("product_image"),rs.getString("product_manufacturer"),rs.getInt("inventory"),rs.getString("store_zipcode"),rs.getInt("rating"),rs.getString("product_condition"));
 			}
 			rs.close();
 			pst.close();
@@ -89,6 +91,7 @@ public class ProductRecommenderUtility{
 		}
 		catch(Exception e)
 		{
+			System.out.println(e+"exception");
 		}
 		return prodObj;
 	}
